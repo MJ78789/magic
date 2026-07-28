@@ -1,9 +1,10 @@
 import { createServer } from "node:http";
 import { readFile, stat } from "node:fs/promises";
+import { existsSync } from "node:fs";
 import { extname, join, normalize } from "node:path";
-import { fileURLToPath } from "node:url";
 
-const root = normalize(join(fileURLToPath(new URL(".", import.meta.url)), ".."));
+const cwd = process.cwd();
+const root = normalize(existsSync(join(cwd, "index.html")) ? cwd : join(cwd, "dist"));
 const types = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
