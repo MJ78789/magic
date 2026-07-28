@@ -1,34 +1,11 @@
-import { createServer } from "node:http";
-import { readFile, stat } from "node:fs/promises";
-import { existsSync } from "node:fs";
-import { extname, join, normalize } from "node:path";
-
-const cwd = process.cwd();
-const root = normalize(existsSync(join(cwd, "index.html")) ? cwd : join(cwd, "dist"));
-const types = {
-  ".html": "text/html; charset=utf-8",
-  ".css": "text/css; charset=utf-8",
-  ".js": "text/javascript; charset=utf-8",
-  ".jpg": "image/jpeg",
-  ".png": "image/png",
-  ".svg": "image/svg+xml"
-};
-
-createServer(async (request, response) => {
-  try {
-    const url = new URL(request.url, "http://localhost");
-    const relative = url.pathname === "/" ? "index.html" : url.pathname.replace(/^\/+/, "");
-    const candidate = normalize(join(root, relative));
-    if (!candidate.startsWith(root)) throw new Error("Invalid path");
-    const info = await stat(candidate);
-    if (!info.isFile()) throw new Error("Not found");
-    response.writeHead(200, {
-      "content-type": types[extname(candidate)] || "application/octet-stream",
-      "cache-control": relative === "index.html" ? "no-cache" : "public, max-age=86400"
+export default {
+  async fetch(request, env) {
+    if (env.ASSETS && typeof env.ASSETS.fetch === "function") {
+      return env.ASSETS.fetch(request);
+    }
+    return new Response("MagicSuccess Thailand", {
+      status: 200,
+      headers: { "content-type": "text/plain; charset=utf-8" }
     });
-    response.end(await readFile(candidate));
-  } catch {
-    response.writeHead(404, { "content-type": "text/plain; charset=utf-8" });
-    response.end("Not found");
   }
-}).listen(Number(process.env.PORT || 3000), "0.0.0.0");
+};
