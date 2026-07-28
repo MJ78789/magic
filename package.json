@@ -2,7 +2,8 @@
   "name": "magicsuccess-thailand-profile",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "build": "mkdir -p dist && cp index.html dist/index.html && cp -R assets dist/assets"
+    "build": "mkdir -p dist/server dist/.openai && cp index.html dist/index.html && cp -R assets dist/assets && cp server/index.js dist/server/index.js && cp .openai/hosting.json dist/.openai/hosting.json"
   }
 }
