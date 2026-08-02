@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "mkdir -p dist/server dist/.openai dist/assets dist/data dist/content && cp index.html youtube.html content.html article.html dist/ && cp -R assets/. dist/assets/ && cp -R data/. dist/data/ && cp -R content/. dist/content/ && cp server/index.js dist/server/index.js && cp .openai/hosting.json dist/.openai/hosting.json",
+    "build": "mkdir -p dist/server dist/.openai dist/assets dist/data dist/content && cp index.html youtube.html content.html article.html robots.txt sitemap.xml CNAME dist/ && cp -R assets/. dist/assets/ && cp -R data/. dist/data/ && cp -R content/. dist/content/ && cp server/index.js dist/server/index.js && cp .openai/hosting.json dist/.openai/hosting.json",
     "sync:youtube": "node scripts/sync-youtube.mjs",
     "check": "node --check assets/js/main.js && node --check assets/js/youtube.js && node --check assets/js/content.js && node --check assets/js/article.js && node --check scripts/sync-youtube.mjs"
   }

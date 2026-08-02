@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://magicsuccessthailand.com/sitemap.xml
