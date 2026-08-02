@@ -1,0 +1,9 @@
+{
+  "mode":"mock",
+  "items":[
+    {"slug":"meaningful-success","title":"ความสำเร็จที่มีความหมาย ไม่จำเป็นต้องเหมือนใคร","excerpt":"เริ่มจากนิยามชีวิตที่เราอยากใช้ ก่อนเลือกเป้าหมายที่เราอยากไปถึง","category":"Mindset","date":"2026-08-01","readingTime":"5 นาที","file":"content/meaningful-success.md","videoId":"pod-01"},
+    {"slug":"gentle-discipline","title":"วินัยที่ดี ไม่จำเป็นต้องใจร้ายกับตัวเอง","excerpt":"สร้างความสม่ำเสมอด้วยระบบเล็ก ๆ ที่เคารพพลังงานและชีวิตจริง","category":"Growth","date":"2026-07-28","readingTime":"4 นาที","file":"content/gentle-discipline.md","videoId":"pod-02"},
+    {"slug":"momentum","title":"เริ่มอย่างไรในวันที่ไม่มีแรง","excerpt":"สามขั้นตอนง่าย ๆ เพื่อสร้างแรงส่ง โดยไม่รอให้ความพร้อมมาถึง","category":"Action","date":"2026-07-24","readingTime":"4 นาที","file":"content/momentum.md","videoId":"video-01"},
+    {"slug":"life-system","title":"เป้าหมายบอกทิศทาง แต่ระบบพาเราไปถึง","excerpt":"ออกแบบวันธรรมดาให้สนับสนุนสิ่งสำคัญ โดยใช้แรงใจให้น้อยลง","category":"Productivity","date":"2026-07-20","readingTime":"6 นาที","file":"content/life-system.md","videoId":"video-02"}
+  ]
+}

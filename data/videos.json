@@ -1,0 +1,19 @@
+{
+  "mode": "mock",
+  "updatedAt": "2026-08-02T08:00:00+07:00",
+  "channelUrl": "https://www.youtube.com/@magicsuccessthailand",
+  "items": [
+    {"id":"pod-01","category":"podcast","title":"ความสำเร็จที่มีความหมาย เริ่มจากการรู้จักตัวเอง","description":"บทสนทนาเรื่องเป้าหมาย คุณค่า และการเติบโตโดยไม่หลงทาง","duration":"18:42","publishedAt":"2026-07-30","featured":true},
+    {"id":"pod-02","category":"podcast","title":"สร้างวินัยอย่างอ่อนโยน แต่ไปได้ไกล","description":"ออกแบบระบบเล็ก ๆ ที่ช่วยให้เราทำสิ่งสำคัญได้อย่างต่อเนื่อง","duration":"22:10","publishedAt":"2026-07-24","featured":true},
+    {"id":"pod-03","category":"podcast","title":"เมื่อความกลัวกำลังบอกอะไรเรา","description":"เรียนรู้การฟังความกลัว และเปลี่ยนมันเป็นข้อมูลสำหรับการตัดสินใจ","duration":"16:05","publishedAt":"2026-07-18","featured":false},
+    {"id":"pod-04","category":"podcast","title":"เงิน เวลา และอิสรภาพที่ออกแบบได้","description":"มุมคิดเพื่อจัดสมดุลชีวิต โดยไม่ทิ้งความฝันและความรับผิดชอบ","duration":"25:30","publishedAt":"2026-07-12","featured":true},
+    {"id":"short-01","category":"shorts","title":"เริ่มเล็ก ไม่ได้แปลว่าฝันเล็ก","description":"หนึ่งนาทีเพื่อเริ่มสิ่งสำคัญในวันนี้","duration":"0:48","publishedAt":"2026-08-01","featured":true},
+    {"id":"short-02","category":"shorts","title":"พักให้พอ แล้วค่อยไปต่อ","description":"การพักคือส่วนหนึ่งของความก้าวหน้า","duration":"0:42","publishedAt":"2026-07-29","featured":true},
+    {"id":"short-03","category":"shorts","title":"เลิกเปรียบเทียบ แล้วกลับมาเติบโต","description":"วัดความก้าวหน้ากับตัวเราในเมื่อวาน","duration":"0:55","publishedAt":"2026-07-26","featured":false},
+    {"id":"short-04","category":"shorts","title":"คำถามเดียวก่อนตัดสินใจ","description":"สิ่งนี้พาเราเข้าใกล้ชีวิตที่ต้องการหรือไม่","duration":"0:39","publishedAt":"2026-07-21","featured":true},
+    {"id":"video-01","category":"videos","title":"5 วิธีสร้าง Momentum ให้ชีวิตกลับมาเดินหน้า","description":"แนวทางลงมือที่ทำได้จริง เมื่อรู้สึกหมดพลังหรือหลุดจากเป้าหมาย","duration":"8:15","publishedAt":"2026-07-28","featured":true},
+    {"id":"video-02","category":"videos","title":"ออกแบบชีวิตด้วยระบบ ไม่ใช่แรงฮึด","description":"เปลี่ยนเป้าหมายให้เป็นกิจวัตรและสภาพแวดล้อมที่ช่วยเรา","duration":"10:32","publishedAt":"2026-07-20","featured":true},
+    {"id":"video-03","category":"videos","title":"บทเรียนจากวันที่แผนไม่เป็นไปตามแผน","description":"รับมือความไม่แน่นอนด้วยสติ การทบทวน และทางเลือกใหม่","duration":"7:48","publishedAt":"2026-07-14","featured":false},
+    {"id":"video-04","category":"videos","title":"จากความคิดสู่ผลงาน ด้วย Creative Workflow","description":"จัดระบบไอเดีย การผลิต และการเผยแพร่ให้ทำงานร่วมกัน","duration":"12:06","publishedAt":"2026-07-08","featured":true}
+  ]
+}
