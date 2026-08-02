@@ -4,7 +4,45 @@ nav?.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{nav.
 document.querySelector("#year").textContent=new Date().getFullYear();
 const items=document.querySelectorAll(".reveal");
 if(matchMedia("(prefers-reduced-motion: reduce)").matches){items.forEach(item=>item.classList.add("visible"))}else{const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target)}}),{threshold:.12});items.forEach(item=>observer.observe(item))}
-// Analytics-ready event hooks. No external tracker is loaded in the mockup.
-window.magicTrack=(eventName,details={})=>window.dispatchEvent(new CustomEvent("magic:analytics",{detail:{eventName,...details}}));
-document.addEventListener("click",event=>{const target=event.target.closest("[data-track]");if(target)window.magicTrack(target.dataset.track,{videoId:target.dataset.videoId||null,path:location.pathname})});
-window.magicTrack("page_view",{path:location.pathname,title:document.title});
+const GA_MEASUREMENT_ID="G-TP4N7HZC27";
+const consentKey="magic_analytics_consent";
+window.dataLayer=window.dataLayer||[];
+window.gtag=window.gtag||function(){window.dataLayer.push(arguments)};
+gtag("consent","default",{analytics_storage:"denied",ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",wait_for_update:500});
+
+const loadAnalytics=()=>{
+  if(document.querySelector(`script[src*="${GA_MEASUREMENT_ID}"]`))return;
+  const script=document.createElement("script");
+  script.async=true;
+  script.src=`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+  document.head.append(script);
+  gtag("js",new Date());
+  gtag("config",GA_MEASUREMENT_ID,{send_page_view:false});
+  gtag("event","page_view",{page_title:document.title,page_location:location.href,page_path:location.pathname+location.search});
+};
+
+const setAnalyticsConsent=accepted=>{
+  localStorage.setItem(consentKey,accepted?"granted":"denied");
+  gtag("consent","update",{analytics_storage:accepted?"granted":"denied"});
+  document.querySelector(".cookie-notice")?.remove();
+  if(accepted)loadAnalytics();
+};
+
+const savedConsent=localStorage.getItem(consentKey);
+if(savedConsent==="granted"){
+  gtag("consent","update",{analytics_storage:"granted"});
+  loadAnalytics();
+}else if(savedConsent===null){
+  const notice=document.createElement("aside");
+  notice.className="cookie-notice";
+  notice.setAttribute("aria-label","การตั้งค่าคุกกี้");
+  notice.innerHTML='<p><strong>การวิเคราะห์ผู้เข้าชม</strong><br>เราใช้ Google Analytics เพื่อดูสถิติแบบภาพรวมและพัฒนาเนื้อหา โดยไม่แสดงชื่อผู้เข้าชม</p><div><button type="button" data-consent="deny">ไม่อนุญาต</button><button class="primary" type="button" data-consent="accept">อนุญาต</button></div>';
+  document.body.append(notice);
+  notice.addEventListener("click",event=>{const choice=event.target.closest("[data-consent]")?.dataset.consent;if(choice)setAnalyticsConsent(choice==="accept")});
+}
+
+window.magicTrack=(eventName,details={})=>{
+  window.dispatchEvent(new CustomEvent("magic:analytics",{detail:{eventName,...details}}));
+  if(localStorage.getItem(consentKey)==="granted")gtag("event",eventName,details);
+};
+document.addEventListener("click",event=>{const target=event.target.closest("[data-track]");if(target)window.magicTrack(target.dataset.track,{video_id:target.dataset.videoId||undefined,article_slug:target.dataset.articleSlug||undefined,page_path:location.pathname})});
