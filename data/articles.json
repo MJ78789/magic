@@ -1,8 +1,9 @@
 {
   "mode": "editorial-preview",
-  "updatedAt": "2026-08-02T15:35:00+07:00",
+  "updatedAt": "2026-08-02T18:35:00+07:00",
   "categories": ["ท่องเที่ยว", "AI", "แรงบันดาลใจ", "การลงทุน", "ธรรมะ", "ทองคำ", "English Daily"],
   "items": [
+    {"slug":"ai-output-quality-gate","title":"ตรวจคำตอบ AI ก่อนส่งต่อ: ระบบ 3 ชั้นจากหลักฐานถึงอนุมัติ","excerpt":"คู่มือตรวจหลักฐาน ความสอดคล้อง และสิทธิ์ก่อนส่งงาน พร้อม Prompt เช็กลิสต์ และตัวอย่างแก้ร่างที่ AI เขียนเกินข้อมูล","category":"AI","date":"2026-08-02","readingTime":"8 นาที","file":"content/ai-output-quality-gate.md","image":"assets/images/articles/ai-quality-gate.webp","imageAlt":"ผู้ทำงานกำลังตรวจร่างจาก AI ผ่านขั้นหลักฐาน การทบทวน และการอนุมัติ"},
     {"slug":"travel-plan-slow-thailand","title":"เที่ยวไทยแบบไม่เร่ง: วางแผน 3 วันให้ได้พักจริง","excerpt":"ตัวอย่างทริปเชียงใหม่เพื่อพักผ่อนและหาแรงบันดาลใจ พร้อมงบประมาณและแผนเดินทาง 3 วัน","category":"ท่องเที่ยว","date":"2026-08-02","readingTime":"8 นาที","file":"content/travel-plan-slow-thailand.md","image":"assets/images/articles/travel.webp","imageAlt":"เส้นทางบนภูเขาไทยยามพระอาทิตย์ขึ้น"},
     {"slug":"travel-checklist-before-booking","title":"เช็กลิสต์ 8 ข้อก่อนจองทริป ลดพลาด ลดงบบาน","excerpt":"ตรวจฤดูกาล การเดินทาง ที่พัก และเงื่อนไขสำคัญก่อนกดจ่ายเงิน","category":"ท่องเที่ยว","date":"2026-08-02","readingTime":"5 นาที","file":"content/travel-checklist-before-booking.md","image":"assets/images/articles/travel.webp","imageAlt":"วิวภูเขาและทางเดินสำหรับวางแผนท่องเที่ยว"},
     {"slug":"ai-summarize-thai-documents","title":"ใช้ AI สรุปเอกสารภาษาไทยให้ได้ใจความใน 4 ขั้นตอน","excerpt":"วิธีเตรียมข้อมูล พร้อม Prompt ภาษาไทยที่คัดลอกใช้ได้ และตัวอย่างเปลี่ยนบทสรุปเป็นรายการติดตามงาน","category":"AI","date":"2026-08-02","readingTime":"9 นาที","file":"content/ai-summarize-thai-documents.md","image":"assets/images/articles/ai.webp","imageAlt":"โต๊ะทำงานและคอมพิวเตอร์แสดงภาพเครือข่าย AI"},
