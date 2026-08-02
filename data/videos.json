@@ -1,6 +1,6 @@
 {
   "mode": "live",
-  "updatedAt": "2026-08-02T13:59:34.129Z",
+  "updatedAt": "2026-08-02T19:37:28.319Z",
   "channelId": "UC4owSQOSWhEemcw0VkTCtVQ",
   "channelUrl": "https://www.youtube.com/@magicsuccessthailand",
   "playlists": {
@@ -9,6 +9,17 @@
     "videos": "PLZ7mOeT3II8E"
   },
   "items": [
+    {
+      "id": "-F1Qer1vCPY",
+      "category": "podcast",
+      "title": "อายุ 50 เงินเก็บเป็นศูนย์ก็รอด! 3 ทางเลือกสุดท้าย พลิกชีวิตก่อนเกษียณ (ทำตามนี้ทันแน่นอน!)",
+      "description": "อายุ 50 แล้วแต่ยังไม่มีเงินเก็บ... สายไปไหม? คำตอบคือ \"สายแล้ว แต่แก้ได้!\" 🛑",
+      "duration": "",
+      "publishedAt": "2026-08-02T17:00:26Z",
+      "featured": true,
+      "thumbnail": "https://i.ytimg.com/vi/-F1Qer1vCPY/maxresdefault.jpg",
+      "url": "https://www.youtube.com/watch?v=-F1Qer1vCPY"
+    },
     {
       "id": "CWFzQrGiNbM",
       "category": "podcast",
