@@ -1,6 +1,6 @@
 {
   "mode": "live",
-  "updatedAt": "2026-08-03T10:08:05.459Z",
+  "updatedAt": "2026-08-03T15:20:07.253Z",
   "channelId": "UC4owSQOSWhEemcw0VkTCtVQ",
   "channelUrl": "https://www.youtube.com/@magicsuccessthailand",
   "playlists": {
@@ -118,6 +118,17 @@
       "featured": true,
       "thumbnail": "https://i.ytimg.com/vi/VFbv_RJd4l0/maxresdefault.jpg",
       "url": "https://www.youtube.com/watch?v=VFbv_RJd4l0"
+    },
+    {
+      "id": "tZpJ3Zovqps",
+      "category": "shorts",
+      "title": "เริ่มต้นใหม่ด้วยก้าวเล็ก ๆ ใน 10 นาที | แรงบันดาลใจสำหรับคนทำงาน",
+      "description": "เมื่อรายการงานดูใหญ่จนไม่รู้จะเริ่มตรงไหน ลองหยุดมองทั้งกอง แล้วเลือกเพียงหนึ่งเรื่องเล็ก ๆ ที่ทำได้ภายใน 10 นาที",
+      "duration": "",
+      "publishedAt": "2026-08-03T11:00:05Z",
+      "featured": true,
+      "thumbnail": "https://i.ytimg.com/vi/tZpJ3Zovqps/maxresdefault.jpg",
+      "url": "https://www.youtube.com/watch?v=tZpJ3Zovqps"
     },
     {
       "id": "ta_zCKlzXJQ",
@@ -305,6 +316,17 @@
       "featured": true,
       "thumbnail": "https://i.ytimg.com/vi/A7c7g855t5M/maxresdefault.jpg",
       "url": "https://www.youtube.com/watch?v=A7c7g855t5M"
+    },
+    {
+      "id": "3sdtyMLXuu4",
+      "category": "videos",
+      "title": "เริ่มต้นใหม่ด้วยก้าวเล็ก ๆ | วิธีหยุดความรู้สึกงานล้น แล้วเริ่มได้ใน 10 นาที",
+      "description": "เมื่อมีหลายเรื่องต้องแก้พร้อมกัน เราอาจรู้สึกว่างานทุกอย่างใหญ่เกินไป จนไม่รู้จะเริ่มตรงไหน วิดีโอนี้ชวนคุณลดสิ่งรบกวน เลือกหนึ่งงานเล็กที่ทำได้ภายใน 10 นาที และใช้ความสำเร็จเล็ก ๆ สร้างแรงส่งให้ชีวิตกลับมาเดินหน้าอีกครั",
+      "duration": "",
+      "publishedAt": "2026-08-03T11:00:07Z",
+      "featured": true,
+      "thumbnail": "https://i.ytimg.com/vi/3sdtyMLXuu4/maxresdefault.jpg",
+      "url": "https://www.youtube.com/watch?v=3sdtyMLXuu4"
     },
     {
       "id": "CWFzQrGiNbM",
