@@ -103,6 +103,7 @@ for (const file of files.filter(
         'placeholder="ค้นหาชื่อหรือประเภทสินค้า"',
       )
       .replace('<select id="pc" disabled>', '<select id="pc">')
+      .replace('<option>ทุกหมวด</option>', '<option value="">ทุกหมวด</option>')
       .replace('<select id="ps" disabled>', '<select id="ps">');
   html = html.replace(
     "FAQ starter set แสดงจำนวนจริง 18/180",

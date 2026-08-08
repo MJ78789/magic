@@ -10,6 +10,8 @@ const esc = (value) =>
         c
       ],
   );
+const facebookShare = (url) =>
+  `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
 const render = () => {
   const q = form?.querySelector("#pq")?.value.toLocaleLowerCase("th") || "",
     category = form?.querySelector("#pc")?.value || "";
@@ -26,7 +28,10 @@ const render = () => {
       ? `฿${Number(x.price.min).toLocaleString("th-TH")} <small>ณ วันที่ตรวจ</small>`
       : "ตรวจราคาล่าสุดใน Shopee";
   grid.innerHTML = rows.length
-    ? `${rows.map((x) => `<article class="product-card" id="${esc(x.slug)}">${x.imageUrl ? `<img class="product-image" src="${esc(x.imageUrl)}" alt="${esc(x.name)}" loading="lazy">` : ""}<p class="meta">ตรวจล่าสุด ${esc(x.checkedAt)} · ร้าน ${esc(x.shopName || "ตรวจใน Shopee")}</p><h2>${esc(x.name)}</h2><p>${esc(x.description)}</p><p class="product-price">${price(x)}</p><h3>จุดเด่น</h3><p>${esc(x.highlights.join(" · "))}</p><h3>ข้อควรตรวจ</h3><p>${esc(x.limitations.join(" · "))}</p><label><input type="checkbox" data-compare="${esc(x.id)}" ${compare.has(x.id) ? "checked" : ""}> เปรียบเทียบ</label>${x.status === "Published" && x.affiliateUrl ? `<p><a class="button affiliate-link" target="_blank" rel="sponsored nofollow noopener" data-product-id="${esc(x.id)}" href="${esc(x.affiliateUrl)}">ดูราคาและตัวเลือกล่าสุดใน Shopee</a></p><small>ลิงก์ Affiliate — เว็บไซต์อาจได้รับค่าคอมมิชชัน โดยผู้ซื้อไม่เสียค่าใช้จ่ายเพิ่ม</small>` : ""}</article>`).join("")}<div class="compare-bar" aria-live="polite">เลือกเปรียบเทียบ ${compare.size} รายการ${compare.size > 1 ? " · ตารางเปรียบเทียบจะแสดงเฉพาะข้อมูลที่ตรวจแล้ว" : ""}</div>`
+    ? `${rows.map((x) => {
+        const itemUrl = new URL(`products.html#${x.slug}`, location.href).href;
+        return `<article class="product-card" id="${esc(x.slug)}">${x.imageUrl ? `<img class="product-image" src="${esc(x.imageUrl)}" alt="${esc(x.name)}" loading="lazy">` : ""}<p class="meta">ตรวจล่าสุด ${esc(x.checkedAt)} · ร้าน ${esc(x.shopName || "ตรวจใน Shopee")}</p><h2>${esc(x.name)}</h2><p>${esc(x.description)}</p><p class="product-price">${price(x)}</p><h3>จุดเด่น</h3><p>${esc(x.highlights.join(" · "))}</p><h3>ข้อควรตรวจ</h3><p>${esc(x.limitations.join(" · "))}</p><label><input type="checkbox" data-compare="${esc(x.id)}" ${compare.has(x.id) ? "checked" : ""}> เปรียบเทียบ</label><div class="share-actions">${x.status === "Published" && x.affiliateUrl ? `<a class="button affiliate-link" target="_blank" rel="sponsored nofollow noopener" data-product-id="${esc(x.id)}" href="${esc(x.affiliateUrl)}">ดูราคาใน Shopee</a>` : ""}<a class="button secondary facebook-share" target="_blank" rel="noopener noreferrer" data-track="facebook_share" href="${esc(facebookShare(itemUrl))}">แชร์ไป Facebook</a></div>${x.status === "Published" && x.affiliateUrl ? `<small>ลิงก์ Affiliate — เว็บไซต์อาจได้รับค่าคอมมิชชัน โดยผู้ซื้อไม่เสียค่าใช้จ่ายเพิ่ม</small>` : ""}</article>`;
+      }).join("")}<div class="compare-bar" aria-live="polite">เลือกเปรียบเทียบ ${compare.size} รายการ${compare.size > 1 ? " · ตารางเปรียบเทียบจะแสดงเฉพาะข้อมูลที่ตรวจแล้ว" : ""}</div>`
     : '<div class="empty-box"><h2>ยังไม่มีรายการสินค้าที่ผ่านการตรวจ</h2><p>โครงสร้างรองรับค้นหา กรอง และเลือกเปรียบเทียบแล้ว แต่เราไม่สร้างชื่อสินค้า ราคา คะแนน รีวิว ร้านค้า หรือลิงก์ Affiliate ขึ้นเอง รายการจะปรากฏหลังผ่าน validation และ compliance review</p></div>';
 };
 try {

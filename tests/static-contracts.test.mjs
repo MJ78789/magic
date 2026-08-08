@@ -103,3 +103,17 @@ test("service worker never serves 404 HTML for failed subresources", async () =>
   assert.match(source, /freshAsset/);
   assert.match(source, /pathname\.startsWith\("\/data\/"\)/);
 });
+test("products show recommendations by default and public content has Facebook sharing", async () => {
+  const productsPage = await readFile(new URL("../products.html", import.meta.url), "utf8");
+  assert.match(productsPage, /<option value="">ทุกหมวด<\/option>/);
+  for (const file of [
+    "assets/js/products.js",
+    "assets/js/content.js",
+    "assets/js/youtube.js",
+    "assets/js/article.js",
+  ]) {
+    const source = await readFile(new URL(`../${file}`, import.meta.url), "utf8");
+    assert.match(source, /facebook\.com\/sharer\/sharer\.php/);
+    assert.match(source, /data-track=["']facebook_share["']/);
+  }
+});
