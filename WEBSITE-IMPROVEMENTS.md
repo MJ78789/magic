@@ -259,7 +259,7 @@
 | FAQ-YT | YouTube | 30 |
 | FAQ-FB | Facebook | 30 |
 | FAQ-WEB | Website | 30 |
-| FAQ-PPRM | PPRM / Risk Management ของ กฟผ. | 30 |
+| FAQ-RISK | Risk Management | 30 |
 |  | **รวม** | **180** |
 
 ### Prompt Framework มาตรฐาน
@@ -363,7 +363,7 @@ FAQ แต่ละรายการควรมี:
 - Maintenance, testing, change log และ incident response
 - Prompt สำหรับ audit หน้าเว็บ วางเนื้อหา และเขียน acceptance criteria
 
-#### PPRM / Risk Management ของ กฟผ. — 30 FAQs
+#### Risk Management — 30 FAQs
 
 - นิยาม Risk Management
 - Risk Inventory
@@ -378,7 +378,7 @@ FAQ แต่ละรายการควรมี:
 - Monitoring, reporting และ evidence
 - ตัวอย่าง Prompt สำหรับช่วยตรวจความครบถ้วนโดยไม่สร้างข้อมูลแทนเจ้าของความเสี่ยง
 
-> **ข้อควรระวังเรื่องคำว่า PPRM:** ยังไม่กำหนดคำเต็มอย่างเป็นทางการบนเว็บไซต์จนกว่าจะตรวจสอบจากคู่มือ เอกสาร หรือผู้ดูแลระบบ PPRM ของ กฟผ. โดยตรง คำว่า “Policy and Planning Risk Management” ให้ถือเป็นสมมติฐานที่ยังไม่ยืนยัน ไม่ควรเผยแพร่เป็นข้อเท็จจริง
+> **หลักการ:** เนื้อหา Risk Management เป็นความรู้ทั่วไป ไม่ผูกกับชื่อ หน่วยงาน ระบบ หรือนโยบายภายในขององค์กรใด และต้องไม่สร้างเกณฑ์ คะแนน หรือสถานะที่ผู้ใช้ไม่ได้ให้
 
 ### ฟังก์ชันหน้า FAQs ที่แนะนำ
 
@@ -415,7 +415,7 @@ FAQ แต่ละรายการควรมี:
 - FAQ เชิงลึกครบ 6 หมวด หมวดละอย่างน้อย 30 ข้อ
 - Prompt ทุกตัวมี Role, Task, Context, Format และ Constraints
 - เนื้อหาการเงินและองค์กรมีข้อจำกัด/คำเตือนที่เหมาะสม
-- คำเต็ม PPRM ต้องผ่านการยืนยันจากแหล่งทางการก่อนเผยแพร่
+- ไม่อ้างชื่อหน่วยงาน ระบบ หรือนโยบายภายในในเว็บไซต์ส่วนตัว
 - Admin จัดการสถานะ ลำดับ หมวด Tag และประวัติการแก้ไขได้
 - Analytics แสดง FAQ ยอดนิยม Prompt copies Search terms และ content gaps ได้
 - หน้า FAQ รองรับ SEO, Accessibility และ Deep link
@@ -424,7 +424,7 @@ FAQ แต่ละรายการควรมี:
 
 - จะเผยแพร่ครบ 180 ข้อพร้อมกันหรือทยอยเป็น Batch
 - ผู้รับผิดชอบตรวจเนื้อหาแต่ละหมวด
-- แหล่งอ้างอิงทางการสำหรับ PPRM/Risk Management
+- แหล่งอ้างอิงสาธารณะที่เหมาะสมสำหรับ Risk Management
 - ขอบเขต Financial FAQ ว่าเน้นการเงินส่วนบุคคล ธุรกิจ หรือทั้งสองด้าน
 - Taxonomy ระหว่าง Topic Hub 4 กลุ่มกับ FAQ เชิงลึก 6 หมวด
 - วิธีจัดเก็บ: Markdown/JSON หรือ Database ผ่าน Admin Console
@@ -954,7 +954,7 @@ FAQ แต่ละรายการควรมี:
 | งาน | สถานะ MVP | สิ่งที่เสร็จในรอบนี้ | สิ่งที่ยังต้องทำก่อน Done |
 |---|---|---|---|
 | WEB-001 | Review / Boundary implemented | API boundary, default-deny service status, server-side member/admin checks และ env allowlist contract | OAuth adapter, session/DB, Admin UI, audit และ provider tests |
-| WEB-002 | Review / Partial | FAQ 60/180 (10 ข้อต่อหมวด), search/filter/tag/deep link/copy, related items, local-only helpful feedback และ source-status/ข้อจำกัด | เขียนและตรวจอีก 120 ข้อ, official sources/reviewers โดยเฉพาะ PPRM, admin history |
+| WEB-002 | Review / Partial | FAQ 60/180 (10 ข้อต่อหมวด), search/filter/tag/deep link/copy, related items, local-only helpful feedback และ source-status/ข้อจำกัด | เขียนและตรวจอีก 120 ข้อ, public sources/reviewers โดยเฉพาะ Risk Management, admin history |
 | WEB-003 | Review / Architecture only | 4-category catalog UX, versioned schema/import policy, deterministic fail-closed validator, comparison architecture, disclosure และ 0 fake listings | Shopee approval/feed, real listings, link/compliance review, conversion import |
 | WEB-004 | Review / MVP | Privacy, cookies/consent, terms, affiliate, medical, financial และ data-request disclosure | ยืนยัน privacy contact และ legal review เมื่อ provider ถูกเลือก |
 | WEB-005 | Review / MVP | Canonical/absolute OG, generated WebPage/Breadcrumb และ Article JSON-LD, sitemap และ deterministic metadata checks | Search Console/GA Data integrations และ external rich-result validation |
@@ -972,7 +972,7 @@ FAQ แต่ละรายการควรมี:
 ### Change Log — MVP-2026-08-08
 
 - เพิ่มหน้า FAQs, products, search, legal, services, governance และ branded 404
-- เพิ่ม FAQ starter set 18/180 อย่างชัดเจน; ไม่ขยายคำเต็ม PPRM และไม่สร้าง reference แทน
+- เพิ่ม FAQ starter set 18/180 อย่างชัดเจน โดยใช้ Risk Management ในบริบททั่วไปและไม่สร้าง reference แทน
 - เพิ่ม product data model ว่าง; ไม่มี Shopee listing, rating, price, order, commission หรือ revenue จำลอง
 - เพิ่ม default-deny backend contract สำหรับ OAuth/Admin/Member/GA/Database/Newsletter/Affiliate/Payment
 - เพิ่ม manifest/service worker, sitemap build, syntax/site/security tests และ setup documentation
@@ -982,9 +982,16 @@ FAQ แต่ละรายการควรมี:
 
 - ขยาย FAQ จาก 18 เป็น 60 รายการอย่างสมดุล 6 หมวด (10 รายการต่อหมวด); คงเป้าหมาย 180 และไม่อ้างว่าเสร็จครบ
 - เพิ่ม metadata สถานะแหล่งข้อมูล ข้อจำกัด วันที่ตรวจ Related FAQs ตัวกรอง tag URL filter state และ helpful feedback ที่เก็บเฉพาะในอุปกรณ์
-- คง PPRM เป็นคำย่อที่ยังไม่ยืนยัน; เนื้อหาองค์กรทั้งหมดเป็นกรอบทั่วไปและกำหนดสถานะ `official-source-required`
+- ปรับเนื้อหาเป็น Risk Management ทั่วไป ไม่ผูกกับชื่อหน่วยงาน ระบบ หรือนโยบายภายใน
 - ปรับ unified search ให้ค้น prompt/tag, กรองประเภท/หมวด, เรียง relevance/latest/title และใช้คำค้นแนะนำโดยไม่ส่งคำค้นออกนอกอุปกรณ์
 - เพิ่ม product schema/import policy และ validator แบบ fail-closed; catalog ยังคง 0 รายการและไม่มีสินค้า ราคา rating รีวิว ลิงก์หรือรายได้จำลอง
 - เพิ่ม WebPage/Breadcrumb และ Article structured data ใน build, ตรวจ absolute canonical/OG และ accessibility contracts
 - แก้ service worker ให้ fallback 404 เฉพาะ navigation และเพิ่ม freshness warning จาก timestamp/count ของข้อมูล YouTube ในเครื่อง
 - เพิ่ม deterministic static-contract tests; ไม่มีการทำ Google auth/OAuth/Gmail/Admin identity, ไม่มี secret/provider integration, ไม่ Push และไม่ Deploy
+
+### Change Log — CONTENT-INTAKE-2026-08-08
+
+- เตรียมคิวภายใน Shopee Affiliate 7 ช่องสำหรับรับ URL จริงจากเจ้าของเว็บไซต์; ทุกช่องยังเป็น `awaiting-url` และไม่ถือเป็นสินค้าเผยแพร่
+- เพิ่มโครง `usageExample` ใน FAQ และตัวอย่างกรอกใช้งานจริงสำหรับ `FAQ-MKT-002` โดยระบุชัดว่าเป็นข้อมูลสาธิต ไม่ใช่คำรับรองหรือผลลัพธ์จริง
+- หน้า FAQ รองรับค้นหาและแสดงตัวอย่างการใช้งาน พร้อมลิงก์กลับไปยังบทความ Prompt Template 5 ส่วน
+- คง catalog สาธารณะเป็น 0 รายการจนกว่า URL และข้อมูลสินค้าจะผ่าน validation, affiliate disclosure และ compliance review

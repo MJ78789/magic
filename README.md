@@ -69,6 +69,6 @@ and asserts that the MVP contains no unverified product listing.
   tax, delivery, refund, webhook and privacy workflows are approved.
 
 Before deployment, confirm the official privacy contact, OAuth consent screen/origins,
-analytics retention, monitoring provider, Shopee terms and reviewer, official PPRM source,
+analytics retention, monitoring provider, Shopee terms and reviewer, Risk Management content sources,
 newsletter provider and payment/tax workflow. Keep each service unavailable until its
 integration and security tests pass.

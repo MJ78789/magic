@@ -2,6 +2,24 @@ import {readFile,writeFile} from "node:fs/promises";
 
 const file=new URL("../data/faqs.json",import.meta.url);
 const data=JSON.parse(await readFile(file,"utf8"));
+for(const item of data.items){
+  if(!item.category.startsWith("PPRM")&&item.category!=="Risk Management")continue;
+  item.category="Risk Management";
+  item.id=item.id.replace("FAQ-PPRM-","FAQ-RISK-");
+  item.related=(item.related||[]).map(id=>id.replace("FAQ-PPRM-","FAQ-RISK-"));
+  item.sourceStatus="general-practice-needs-context-review";
+  item.limitations="ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน";
+  item.prompt=`Role: คุณคือผู้ช่วยด้าน Risk Management ที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “${item.question}” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลและเกณฑ์ที่ผู้ใช้ให้ ห้ามแต่งคะแนน เจ้าของความเสี่ยง หรือสถานะ และให้ผู้รับผิดชอบตรวจยืนยัน`;
+  item.answer=item.answer
+    .replace("แต่ชื่อช่อง สถานะ และรอบรายงานของ กฟผ. ต้องยืนยันจากเอกสารที่ได้รับอนุญาต เว็บไซต์นี้ยังไม่อ้างว่าเป็นแบบฟอร์ม PPRM ทางการ","โดยรายละเอียดของแต่ละแห่งอาจต่างกัน จึงควรตรวจนิยามและแบบฟอร์มที่ใช้งานจริง")
+    .replace(" และเว็บไซต์นี้ยังไม่มีเกณฑ์ PPRM ของ กฟผ. ที่ยืนยันแล้ว","")
+    .replace(" เว็บไซต์จะไม่กำหนดค่าหรือคำจำกัดความแทน กฟผ.","");
+  if(item.id==="FAQ-RISK-001"){
+    item.question="ควรยืนยันคำศัพท์เฉพาะด้านความเสี่ยงอย่างไร?";
+    item.answer="ตรวจนิยามจากเอกสารที่ใช้งานจริง ระบุชื่อเอกสาร เวอร์ชัน วันที่ และผู้อนุมัติ หากยังไม่มีหลักฐานให้ระบุว่ายังไม่ยืนยันและใช้คำทั่วไปแทน";
+    item.prompt="Role: คุณคือผู้ช่วยตรวจเอกสาร\nTask: หาเฉพาะข้อความที่นิยามคำศัพท์ด้านความเสี่ยง\nContext: [เอกสารที่ผู้ใช้ให้]\nFormat: คำศัพท์ ข้อความอ้างอิง เลขหน้า วันที่เอกสาร และสถานะการยืนยัน\nConstraints: หากไม่พบให้ตอบว่าไม่พบ ห้ามเดาความหมาย";
+  }
+}
 const seen=new Set();data.items=data.items.filter(item=>{const key=`${item.category}\u0000${item.question}`;if(seen.has(key))return false;seen.add(key);return true});
 const additions={
 "Marketing for Sales":[
@@ -44,25 +62,24 @@ const additions={
 ["Analytics ที่เคารพความเป็นส่วนตัวควรทำอะไร?","กำหนดวัตถุประสงค์ เก็บเฉพาะ event ที่จำเป็น หลีกเลี่ยงข้อมูลส่วนบุคคล ระบุระยะเก็บ และขอ consent ก่อนโหลดเทคโนโลยีที่ต้องขอ ผู้ใช้ต้องเปลี่ยนใจได้","Intermediate",["analytics","consent"]],
 ["ควรรับมือหน้า 404 อย่างไร?","ตอบสถานะ HTTP ที่ถูกต้องเมื่อโฮสต์รองรับ อธิบายอย่างปลอดภัย เสนอค้นหาและทางกลับ ไม่เปิดเผย path ภายในหรือ stack trace และตรวจลิงก์เสียเป็นส่วนหนึ่งของ build","Intermediate",["404","reliability"]],
 ["Backup กับ version control เหมือนกันหรือไม่?","ไม่เหมือน Version control เก็บประวัติการเปลี่ยนไฟล์ ส่วน backup ช่วยกู้ข้อมูลและระบบจากเหตุเสียหาย ต้องกำหนดขอบเขต รอบเก็บ ที่จัดเก็บ และทดสอบการกู้คืน ไม่ใช่เพียงตรวจว่ามีไฟล์สำรอง","Intermediate",["backup","version control"]]],
-"PPRM / Risk Management ของ กฟผ.":[
-["Risk inventory คืออะไรในกรอบทั่วไป?","คือรายการความเสี่ยงและข้อมูลประกอบที่องค์กรกำหนดเพื่อทบทวนร่วมกัน แต่ชื่อช่อง สถานะ และรอบรายงานของ กฟผ. ต้องยืนยันจากเอกสารที่ได้รับอนุญาต เว็บไซต์นี้ยังไม่อ้างว่าเป็นแบบฟอร์ม PPRM ทางการ","Beginner",["risk inventory","verification"]],
+"Risk Management":[
+["Risk inventory คืออะไรในกรอบทั่วไป?","คือรายการความเสี่ยงและข้อมูลประกอบที่องค์กรกำหนดเพื่อใช้ทบทวน ติดตาม และวางแผนจัดการ โดยรายละเอียดของแต่ละแห่งอาจต่างกัน จึงควรตรวจนิยามและแบบฟอร์มที่ใช้งานจริง","Beginner",["risk inventory","verification"]],
 ["แยก cause, event และ impact อย่างไร?","Cause คือเงื่อนไขที่อาจนำไปสู่เหตุการณ์ Event คือสิ่งไม่แน่นอนที่อาจเกิด และ Impact คือผลต่อวัตถุประสงค์ การแยกนี้เป็นกรอบทั่วไป เจ้าของความเสี่ยงต้องตรวจถ้อยคำและความเชื่อมโยงเอง","Beginner",["cause","event","impact"]],
-["ใครควรกำหนด likelihood และ impact?","ผู้มีอำนาจและความรู้ตามกระบวนการองค์กรต้องประเมินจากหลักฐานและเกณฑ์ฉบับที่อนุมัติ AI ไม่ควรสร้างคะแนนหรือเกณฑ์ขึ้นเอง และเว็บไซต์นี้ยังไม่มีเกณฑ์ PPRM ของ กฟผ. ที่ยืนยันแล้ว","Intermediate",["likelihood","impact","owner"]],
-["Risk appetite และ tolerance ใช้แทนกันได้หรือไม่?","ไม่ควรสรุปว่าเหมือนกันโดยไม่มีนิยามขององค์กร ทั้งสองคำอาจมีความหมายและระดับการใช้ต่างกัน ต้องอ้างเอกสารฉบับ วันที่ และผู้อนุมัติ เว็บไซต์จะไม่กำหนดค่าหรือคำจำกัดความแทน กฟผ.","Advanced",["risk appetite","tolerance"]],
+["ใครควรกำหนด likelihood และ impact?","ผู้รับผิดชอบที่มีอำนาจและความรู้ในเรื่องนั้นควรประเมินจากหลักฐานและเกณฑ์ที่อนุมัติแล้ว AI ไม่ควรสร้างคะแนนหรือเกณฑ์ขึ้นเอง","Intermediate",["likelihood","impact","owner"]],
+["Risk appetite และ tolerance ใช้แทนกันได้หรือไม่?","ไม่ควรสรุปว่าเหมือนกันโดยไม่มีนิยามที่ชัดเจน ทั้งสองคำอาจมีความหมายและระดับการใช้ต่างกัน จึงควรอ้างอิงเอกสารฉบับ วันที่ และผู้อนุมัติที่เกี่ยวข้อง","Advanced",["risk appetite","tolerance"]],
 ["KRI ที่ดีควรตรวจอะไรในกรอบทั่วไป?","ตรวจความเชื่อมโยงกับความเสี่ยง แหล่งข้อมูล สูตร หน่วย ความถี่ เจ้าของข้อมูล เกณฑ์แจ้งเตือน และการตอบสนอง แต่ค่าจริงต้องมาจากข้อมูลและเกณฑ์ที่องค์กรอนุมัติ ห้ามให้ AI แต่ง threshold","Advanced",["kri","monitoring"]],
 ["Control ต่างจาก treatment action อย่างไร?","โดยทั่วไป control คือสิ่งที่ทำอยู่เพื่อปรับความเสี่ยง ส่วน treatment action คือแผนเพิ่มหรือเปลี่ยนการตอบสนอง อย่างไรก็ตามคำจำกัดความและสถานะในระบบจริงต้องตรวจคู่มือองค์กร","Intermediate",["control","treatment"]],
 ["รายงาน residual risk ได้เมื่อใด?","รายงานได้เมื่อมีวิธีประเมิน หลักฐานสถานะ control และเกณฑ์ที่ได้รับอนุมัติครบ AI ช่วยตรวจช่องว่างได้แต่ไม่ควรคำนวณหรือรับรองคะแนนแทนเจ้าของความเสี่ยง เนื้อหานี้เป็นกรอบทั่วไปเท่านั้น","Advanced",["residual risk","evidence"]]]
 };
 
-const prefix={"Marketing for Sales":"FAQ-MKT","Financial":"FAQ-FIN","YouTube":"FAQ-YT","Facebook":"FAQ-FB","Website":"FAQ-WEB","PPRM / Risk Management ของ กฟผ.":"FAQ-PPRM"};
-const constraints=category=>category==="Financial"?"ห้ามแต่งตัวเลข ต้องแสดงสมมติฐานและวิธีคำนวณ ระบุว่าเป็นข้อมูลทั่วไปและให้มนุษย์ตรวจ":"PPRM / Risk Management ของ กฟผ."===category?"ใช้เฉพาะเอกสารที่ได้รับอนุญาต ห้ามแต่งคะแนน เกณฑ์ เจ้าของ หรือคำเต็ม PPRM และให้ผู้รับผิดชอบยืนยัน":"ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ";
+const prefix={"Marketing for Sales":"FAQ-MKT","Financial":"FAQ-FIN","YouTube":"FAQ-YT","Facebook":"FAQ-FB","Website":"FAQ-WEB","Risk Management":"FAQ-RISK"};
+const constraints=category=>category==="Financial"?"ห้ามแต่งตัวเลข ต้องแสดงสมมติฐานและวิธีคำนวณ ระบุว่าเป็นข้อมูลทั่วไปและให้มนุษย์ตรวจ":category==="Risk Management"?"ใช้เฉพาะข้อมูลและเกณฑ์ที่ผู้ใช้ให้ ห้ามแต่งคะแนน เจ้าของความเสี่ยง หรือสถานะ และให้ผู้รับผิดชอบตรวจยืนยัน":"ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ";
 for(const [category,rows] of Object.entries(additions)){
   let n=data.items.filter(x=>x.category===category).length;
   if(n>=10)continue;
-  for(const [question,answer,level,tags] of rows){n++;data.items.push({id:`${prefix[category]}-${String(n).padStart(3,"0")}`,category,level,question,answer,tags,prompt:`Role: คุณคือผู้ช่วยด้าน${category}ที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “${question}” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ${constraints(category)}`,sourceStatus:category.startsWith("PPRM")?"official-source-required":"general-practice-needs-context-review",reviewedAt:"2026-08-08",status:"Published",limitations:category.startsWith("PPRM")?"กรอบทั่วไปเท่านั้น ไม่ใช่คู่มือหรือเกณฑ์ของ กฟผ.":"ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน"});}
+  for(const [question,answer,level,tags] of rows){n++;data.items.push({id:`${prefix[category]}-${String(n).padStart(3,"0")}`,category,level,question,answer,tags,prompt:`Role: คุณคือผู้ช่วยด้าน${category}ที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “${question}” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ${constraints(category)}`,sourceStatus:"general-practice-needs-context-review",reviewedAt:"2026-08-08",status:"Published",limitations:"ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน"});}
 }
-for(const item of data.items){item.sourceStatus??="general-practice-needs-context-review";item.reviewedAt??="2026-08-08";item.status??="Published";item.limitations??=(item.category.startsWith("PPRM")?"กรอบทั่วไปเท่านั้น ไม่ใช่คู่มือหรือเกณฑ์ของ กฟผ.":"ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน");const peers=data.items.filter(x=>x.category===item.category&&x.id!==item.id);const i=data.items.filter(x=>x.category===item.category).findIndex(x=>x.id===item.id);item.related=[peers[i%peers.length]?.id,peers[(i+2)%peers.length]?.id].filter(Boolean);}
+for(const item of data.items){item.sourceStatus??="general-practice-needs-context-review";item.reviewedAt??="2026-08-08";item.status??="Published";item.limitations??="ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน";const peers=data.items.filter(x=>x.category===item.category&&x.id!==item.id);const i=data.items.filter(x=>x.category===item.category).findIndex(x=>x.id===item.id);item.related=[peers[i%peers.length]?.id,peers[(i+2)%peers.length]?.id].filter(Boolean);}
 data.published=data.items.length;data.reviewStatus="expanded-reviewed-batch";data.updatedAt="2026-08-08";
-for(const item of data.items.filter(x=>x.category.startsWith("PPRM"))){item.sourceStatus="official-source-required";item.limitations="กรอบทั่วไปเท่านั้น ไม่ใช่คู่มือหรือเกณฑ์ของ กฟผ."}
 await writeFile(file,JSON.stringify(data,null,2)+"\n");
 console.log(`FAQ corpus: ${data.published}/${data.target}`);
