@@ -18,7 +18,19 @@ for (const item of items) {
   await writeFile(path.join(output, "index.html"), html.replace("</head>",`<script type="application/ld+json">${schema}</script></head>`));
 }
 
-const urls = items.map(item => `  <url><loc>https://magicsuccessthailand.com/articles/${item.slug}/</loc><lastmod>${item.date}</lastmod></url>`).join("\n");
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>https://magicsuccessthailand.com/</loc><lastmod>2026-08-02</lastmod></url>\n  <url><loc>https://magicsuccessthailand.com/youtube.html</loc><lastmod>2026-08-02</lastmod></url>\n  <url><loc>https://magicsuccessthailand.com/content.html</loc><lastmod>2026-08-02</lastmod></url>\n${urls}\n</urlset>\n`;
+const publicPages = [
+  ["", "2026-08-02"],
+  ["youtube.html", "2026-08-02"],
+  ["content.html", "2026-08-08"],
+  ["faqs.html", "2026-08-02"],
+  ["products.html", "2026-08-02"],
+  ["search.html", "2026-08-02"],
+  ["legal.html", "2026-08-02"],
+  ["services.html", "2026-08-02"],
+  ["governance.html", "2026-08-02"]
+];
+const pageUrls = publicPages.map(([page, lastmod]) => `  <url><loc>https://magicsuccessthailand.com/${page}</loc><lastmod>${lastmod}</lastmod></url>`);
+const articleUrls = items.map(item => `  <url><loc>https://magicsuccessthailand.com/articles/${item.slug}/</loc><lastmod>${item.updatedAt||item.date}</lastmod></url>`);
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[...pageUrls,...articleUrls].join("\n")}\n</urlset>\n`;
 await writeFile(path.join(root, "sitemap.xml"), sitemap);
 console.log(`Built ${items.length} static article pages and sitemap.xml`);

@@ -1,8 +1,9 @@
 {
   "mode": "editorial-preview",
-  "updatedAt": "2026-08-02T18:55:00+07:00",
+  "updatedAt": "2026-08-08T18:30:00+07:00",
   "categories": ["ท่องเที่ยว", "AI", "แรงบันดาลใจ", "การลงทุน", "ธรรมะ", "ทองคำ", "English Daily"],
   "items": [
+    {"slug":"mindful-stop-scrolling-seven-days","title":"หยุดไถหน้าจออย่างมีสติ: แบบฝึก 7 วันเพื่อคืนเวลาให้ชีวิต","excerpt":"ฝึกหยุด–รู้–เลือก–วางก่อนเปิดโทรศัพท์ พร้อมบันทึกคัดลอกใช้ได้ สถานการณ์จำลอง และแผน 7 วันที่ไม่ต้องหักดิบ","category":"ธรรมะ","date":"2026-08-08","updatedAt":"2026-08-08","readingTime":"8 นาที","file":"content/mindful-stop-scrolling-seven-days.md","image":"assets/images/articles/mindful-stop-scrolling-seven-days.webp","imageAlt":"คนพักสายตาจากโทรศัพท์ที่วางคว่ำบนโต๊ะ จิบชาและมองออกไปนอกหน้าต่างยามเย็นอย่างมีสติ"},
     {"slug":"when-life-does-not-go-as-planned","title":"สวรรค์ไม่ทำตามความต้องการของคน: เมื่อชีวิตไม่เป็นดังใจ เราจะวางใจอย่างไร","excerpt":"ชีวิตไม่ได้ตอบสนองทุกความต้องการเสมอไป แต่เรายังเลือกท่าที การกระทำ และก้าวต่อไปได้อย่างมีสติ","category":"ธรรมะ","date":"2026-08-02","readingTime":"7 นาที","file":"content/when-life-does-not-go-as-planned.md","image":"assets/images/articles/dhamma.webp","imageAlt":"คนกำลังนั่งมองท้องฟ้ายามเย็นอย่างสงบ สื่อถึงการยอมรับสิ่งที่ควบคุมไม่ได้"},
     {"slug":"ai-output-quality-gate","title":"ตรวจคำตอบ AI ก่อนส่งต่อ: ระบบ 3 ชั้นจากหลักฐานถึงอนุมัติ","excerpt":"คู่มือตรวจหลักฐาน ความสอดคล้อง และสิทธิ์ก่อนส่งงาน พร้อม Prompt เช็กลิสต์ และตัวอย่างแก้ร่างที่ AI เขียนเกินข้อมูล","category":"AI","date":"2026-08-02","readingTime":"8 นาที","file":"content/ai-output-quality-gate.md","image":"assets/images/articles/ai-quality-gate.webp","imageAlt":"ผู้ทำงานกำลังตรวจร่างจาก AI ผ่านขั้นหลักฐาน การทบทวน และการอนุมัติ"},
     {"slug":"travel-plan-slow-thailand","title":"เที่ยวไทยแบบไม่เร่ง: วางแผน 3 วันให้ได้พักจริง","excerpt":"ตัวอย่างทริปเชียงใหม่เพื่อพักผ่อนและหาแรงบันดาลใจ พร้อมงบประมาณและแผนเดินทาง 3 วัน","category":"ท่องเที่ยว","date":"2026-08-02","readingTime":"8 นาที","file":"content/travel-plan-slow-thailand.md","image":"assets/images/articles/travel.webp","imageAlt":"เส้นทางบนภูเขาไทยยามพระอาทิตย์ขึ้น"},
