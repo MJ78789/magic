@@ -1,0 +1,3 @@
+const grid=document.querySelector("#product-grid"),form=document.querySelector("#product-form");
+const render=items=>{grid.innerHTML=items.length?items.map(()=>"").join(""):'<div class="empty-box"><h2>ยังไม่มีรายการสินค้าที่ผ่านการตรวจ</h2><p>เราไม่สร้างชื่อสินค้า ราคา คะแนน รีวิว ร้านค้า หรือลิงก์ Affiliate ขึ้นเอง รายการจะปรากฏเมื่อข้อมูลได้รับการยืนยันและผ่านการตรวจเนื้อหาแล้ว</p></div>'};
+try{const {items}=await fetch("data/products.json").then(r=>r.json());render(items);form?.addEventListener("input",()=>render(items))}catch{grid.innerHTML='<p class="notice">โหลดแคตตาล็อกไม่สำเร็จ กรุณาลองใหม่ภายหลัง</p>'}
