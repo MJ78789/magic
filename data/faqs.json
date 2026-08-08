@@ -1,26 +1,1210 @@
 {
   "target": 180,
-  "published": 18,
-  "reviewStatus": "starter-batch",
+  "published": 60,
+  "reviewStatus": "expanded-reviewed-batch",
   "updatedAt": "2026-08-08",
   "items": [
-    {"id":"FAQ-MKT-001","category":"Marketing for Sales","level":"Beginner","question":"Customer persona ที่ดีควรเริ่มจากอะไร?","answer":"เริ่มจากหลักฐานของลูกค้าจริง เช่น บทสนทนา ปัญหาที่ถามซ้ำ และเหตุผลที่ซื้อหรือไม่ซื้อ แล้วแยกข้อเท็จจริงออกจากสมมติฐาน Persona เป็นเครื่องมือทบทวน ไม่ใช่ภาพเหมารวมของคนทั้งกลุ่ม","tags":["persona","sales"],"prompt":"Role: คุณคือนักวิจัยลูกค้าที่ระมัดระวัง\nTask: สรุป persona จากข้อมูลที่ให้เท่านั้น\nContext: [วางบทสัมภาษณ์หรือบันทึกการขาย]\nFormat: ตาราง หลักฐาน / ข้อสังเกต / สิ่งที่ยังไม่ทราบ\nConstraints: ห้ามเดาอายุ รายได้ หรือแรงจูงใจที่ไม่มีในข้อมูล"},
-    {"id":"FAQ-MKT-002","category":"Marketing for Sales","level":"Beginner","question":"Value proposition ต่างจากคำโฆษณาอย่างไร?","answer":"Value proposition อธิบายว่าช่วยใคร แก้ปัญหาอะไร และต่างอย่างไรโดยมีหลักฐานรองรับ ส่วนคำโฆษณาคือวิธีสื่อสารข้อเสนอนั้นในแต่ละช่องทาง","tags":["value proposition"],"prompt":"Role: คุณคือบรรณาธิการการตลาด\nTask: ตรวจ value proposition\nContext: ลูกค้า=[...] ปัญหา=[...] หลักฐาน=[...]\nFormat: จุดแข็ง ช่องว่าง และฉบับปรับปรุง 3 แบบ\nConstraints: ไม่เพิ่มผลลัพธ์หรือหลักฐานที่ผู้ใช้ไม่ได้ให้"},
-    {"id":"FAQ-MKT-003","category":"Marketing for Sales","level":"Intermediate","question":"ใช้ AI วิเคราะห์ยอดขายอย่างไรโดยไม่แต่งข้อมูล?","answer":"ส่งเฉพาะตารางที่จำเป็น ระบุความหมายคอลัมน์ ช่วงเวลา และสูตรที่ต้องใช้ บังคับให้ AI แสดงวิธีคำนวณและทำเครื่องหมายข้อมูลขาด ก่อนให้มนุษย์เทียบผลกับต้นฉบับ","tags":["analysis","quality gate"],"prompt":"Role: คุณคือนักวิเคราะห์ยอดขาย\nTask: คำนวณผลรวมและส่วนต่างจากเป้า\nContext: [ตารางพร้อมนิยามคอลัมน์]\nFormat: ตารางผลลัพธ์ สูตร และรายการข้อมูลขาด\nConstraints: ห้ามเติมค่า ห้ามสรุปสาเหตุโดยไม่มีหลักฐาน และต้องระบุสิ่งที่มนุษย์ต้องตรวจ"},
-    {"id":"FAQ-FIN-001","category":"Financial","level":"Beginner","question":"รายรับ กำไร และกระแสเงินสดต่างกันอย่างไร?","answer":"รายรับคือมูลค่าจากการขาย กำไรคือรายรับหักค่าใช้จ่ายตามเกณฑ์บัญชี ส่วนกระแสเงินสดคือเงินจริงที่เข้าและออกในช่วงเวลา ทั้งสามค่าอาจไม่เท่ากัน ข้อมูลนี้เป็นความรู้ทั่วไป ไม่ใช่คำแนะนำเฉพาะบุคคล","tags":["cash flow","profit"],"prompt":"Role: คุณคือผู้ช่วยการเงินเพื่อการศึกษา\nTask: แยกรายการเป็นรายรับ ค่าใช้จ่าย และเงินสดเข้าออก\nContext: [รายการที่ผู้ใช้ให้]\nFormat: ตารางพร้อมเหตุผลและรายการที่ไม่แน่ใจ\nConstraints: ห้ามแต่งตัวเลข ต้องขอข้อมูลเพิ่มเมื่อจำแนกไม่ได้"},
-    {"id":"FAQ-FIN-002","category":"Financial","level":"Intermediate","question":"Variance analysis ควรอ่านอย่างไร?","answer":"คำนวณ Actual ลบ Budget ให้สอดคล้องทุกแถว แล้วแยกผลต่างที่ดีหรือไม่ดีตามบริบท อย่าสรุปสาเหตุจากตัวเลขเพียงอย่างเดียว ต้องตรวจรายการธุรกรรม ช่วงเวลา และนิยามงบประมาณก่อน","tags":["variance","budget"],"prompt":"Role: คุณคือนักวิเคราะห์งบประมาณที่ระมัดระวัง\nTask: คำนวณ Actual - Budget\nContext: [ตารางและนิยามสัญลักษณ์]\nFormat: ตาราง สูตร ผลต่าง และคำถามติดตาม\nConstraints: ห้ามอ้างสาเหตุที่ไม่มีหลักฐาน ผลลัพธ์ต้องให้มนุษย์ตรวจ"},
-    {"id":"FAQ-FIN-003","category":"Financial","level":"Intermediate","question":"AI ทำ Forecast ให้เชื่อถือได้หรือไม่?","answer":"AI ช่วยจัดโครงสร้าง Scenario และคำนวณตามสมมติฐานได้ แต่ไม่รับประกันอนาคต ควรแสดงสมมติฐาน แหล่งข้อมูล ช่วงความไม่แน่นอน และกรณีฐาน/ดี/แย่ให้ตรวจย้อนกลับได้ ข้อมูลนี้ไม่ใช่คำแนะนำการเงินเฉพาะบุคคล","tags":["forecast","scenario"],"prompt":"Role: คุณคือผู้ช่วยวาง Scenario\nTask: คำนวณ 3 กรณีจากสมมติฐานที่กำหนด\nContext: ฐานข้อมูล=[...] สมมติฐาน=[...]\nFormat: ตารางสูตร ผลลัพธ์ และ sensitivity\nConstraints: ไม่สร้างอัตราเติบโตเอง ไม่ใช้คำว่ารับประกัน และระบุข้อจำกัด"},
-    {"id":"FAQ-YT-001","category":"YouTube","level":"Beginner","question":"ควรเริ่มวางช่อง YouTube จากอะไร?","answer":"กำหนดผู้ชมหนึ่งกลุ่ม ปัญหาหลักหนึ่งชุด และรูปแบบที่ผลิตซ้ำได้ ทดลองหัวข้อเป็นชุดเล็ก แล้วใช้ข้อมูลการรับชมจริงทบทวน แทนการคาดเดาว่าทุกคนคือผู้ชม","tags":["channel","audience"],"prompt":"Role: คุณคือนักวางกลยุทธ์คอนเทนต์\nTask: เสนอเสาหลักช่องจากข้อมูลผู้ชม\nContext: ผู้ชม=[...] ปัญหา=[...] ทรัพยากร=[...]\nFormat: 3 เสาหลัก พร้อมเหตุผลและวิธีทดลอง\nConstraints: ไม่รับประกันยอดวิวและไม่อ้างข้อมูลแพลตฟอร์มที่ไม่ได้ให้"},
-    {"id":"FAQ-YT-002","category":"YouTube","level":"Intermediate","question":"Hook ที่ดีต้องหลอกให้คลิกหรือไม่?","answer":"ไม่ควร Hook ที่ดีบอกประโยชน์หรือความขัดแย้งอย่างตรงไปตรงมา และเนื้อหาต้องส่งมอบสิ่งที่ชื่อกับภาพปกสัญญาไว้ มิฉะนั้นความเชื่อใจและการรับชมต่อเนื่องจะเสียหาย","tags":["hook","retention"],"prompt":"Role: คุณคือบรรณาธิการ YouTube\nTask: เขียน hook ที่ตรงกับเนื้อหา\nContext: ประเด็นหลัก=[...] หลักฐาน=[...]\nFormat: hook 5 แบบ พร้อมคำสัญญาที่แต่ละแบบต้องส่งมอบ\nConstraints: ห้าม clickbait ห้ามแต่งผลลัพธ์"},
-    {"id":"FAQ-YT-003","category":"YouTube","level":"Intermediate","question":"ควรใช้ Analytics ตัวไหนทบทวนวิดีโอ?","answer":"เริ่มจากเป้าหมายของวิดีโอ แล้วดูการแสดงผล การคลิก ระยะเวลารับชม และจุดที่ผู้ชมออกประกอบกัน ตัวเลขเดียวไม่บอกสาเหตุ และเกณฑ์ที่เหมาะสมต่างกันตามช่องและรูปแบบ","tags":["analytics","iteration"],"prompt":"Role: คุณคือนักวิเคราะห์คอนเทนต์\nTask: สรุปสิ่งที่ข้อมูลบอกและยังบอกไม่ได้\nContext: [วางตัวเลขจาก Analytics พร้อมช่วงเวลา]\nFormat: ข้อสังเกต สมมติฐาน การทดลองถัดไป\nConstraints: ห้ามสร้าง benchmark หรือสรุปเหตุและผลจาก correlation"},
-    {"id":"FAQ-FB-001","category":"Facebook","level":"Beginner","question":"Content pillars ของเพจควรมีกี่เรื่อง?","answer":"ไม่มีจำนวนตายตัว เลือกเท่าที่ทีมผลิตสม่ำเสมอและผู้ชมเข้าใจได้ เริ่มจาก 3–5 เสาหลักที่เชื่อมกับเป้าหมาย แล้วทบทวนจากข้อมูลจริงแทนการเพิ่มหัวข้อไปเรื่อย ๆ","tags":["content pillars"],"prompt":"Role: คุณคือนักวางแผนเพจ\nTask: จัดกลุ่มไอเดียเป็นเสาหลัก\nContext: เป้าหมาย=[...] ผู้ชม=[...] ไอเดีย=[...]\nFormat: ตารางเสาหลัก จุดประสงค์ ตัวอย่างโพสต์\nConstraints: รวมเฉพาะข้อมูลที่ให้และทำเครื่องหมายช่องว่าง"},
-    {"id":"FAQ-FB-002","category":"Facebook","level":"Beginner","question":"Caption ที่ดีต้องยาวแค่ไหน?","answer":"ให้ยาวเท่าที่จำเป็นต่อสารและบริบท เริ่มด้วยใจความที่ผู้อ่านเข้าใจได้เร็ว จัดย่อหน้าให้อ่านบนมือถือ และใช้ CTA ที่สอดคล้องกับเป้าหมาย ไม่มีกฎความยาวเดียวสำหรับทุกโพสต์","tags":["caption","cta"],"prompt":"Role: คุณคือ copy editor\nTask: ปรับ caption ให้อ่านง่ายบนมือถือ\nContext: ข้อความต้นฉบับ=[...] เป้าหมาย=[...]\nFormat: ฉบับสั้นและฉบับเต็ม พร้อม CTA\nConstraints: รักษาข้อเท็จจริง ไม่เพิ่มคำรับรองหรือผลลัพธ์"},
-    {"id":"FAQ-FB-003","category":"Facebook","level":"Intermediate","question":"Reach ลดลงแปลว่าเนื้อหาไม่ดีหรือไม่?","answer":"ยังสรุปไม่ได้ Reach ขึ้นกับการกระจายโพสต์ รูปแบบ เวลา ผู้ชม และปัจจัยแพลตฟอร์ม ควรเทียบช่วงเวลาที่เหมาะสม ตรวจ engagement และ conversion ตามเป้าหมาย แล้วทดลองเปลี่ยนทีละปัจจัย","tags":["reach","experiment"],"prompt":"Role: คุณคือนักวิเคราะห์เพจ\nTask: แยกข้อเท็จจริง สมมติฐาน และการทดลอง\nContext: [ข้อมูลโพสต์และช่วงเวลา]\nFormat: ตาราง 3 ส่วน\nConstraints: ห้ามอ้าง algorithm ที่ไม่มีแหล่งข้อมูลและไม่สรุปเหตุผลจากตัวเลขเดียว"},
-    {"id":"FAQ-WEB-001","category":"Website","level":"Beginner","question":"Domain, hosting และ HTTPS ทำหน้าที่ต่างกันอย่างไร?","answer":"Domain คือชื่อที่ใช้เข้าถึงเว็บไซต์ Hosting คือระบบที่เก็บและส่งไฟล์หรือรันแอป ส่วน HTTPS เข้ารหัสการเชื่อมต่อ ทั้งสามส่วนต้องตั้งค่าให้ทำงานร่วมกัน","tags":["domain","hosting","https"],"prompt":"Role: คุณคือผู้ช่วยวางระบบเว็บไซต์\nTask: ตรวจรายการองค์ประกอบที่ต้องมี\nContext: รูปแบบเว็บ=[...] ผู้ให้บริการที่เลือก=[...]\nFormat: checklist พร้อมสิ่งที่ต้องยืนยัน\nConstraints: ห้ามสร้าง DNS ค่าใช้จ่าย หรือ credential"},
-    {"id":"FAQ-WEB-002","category":"Website","level":"Intermediate","question":"Static site ทำ Google Sign-In และ Admin ได้เองหรือไม่?","answer":"ไฟล์ static อย่างเดียวตรวจ token และปกป้องข้อมูลลับอย่างปลอดภัยไม่ได้ ต้องมี backend ที่ตรวจ identity token สร้าง session และบังคับสิทธิ์ทุก API ฝั่ง server การซ่อนเมนูด้วย JavaScript ไม่ใช่ authorization","tags":["security","oauth"],"prompt":"Role: คุณคือ security reviewer\nTask: ตรวจ boundary ระหว่าง static frontend กับ backend\nContext: สถาปัตยกรรม=[...]\nFormat: threat, control, owner และ test\nConstraints: ห้ามเสนอให้เก็บ secret หรือ allowlist ใน frontend"},
-    {"id":"FAQ-WEB-003","category":"Website","level":"Intermediate","question":"Canonical URL และ sitemap ต่างกันอย่างไร?","answer":"Canonical บอก URL หลักของหน้าแต่ละหน้า ส่วน sitemap เป็นรายการ URL ที่ต้องการให้ระบบค้นหาค้นพบ ทั้งคู่ต้องใช้ URL จริงที่เปิดได้และสอดคล้องกัน","tags":["seo","sitemap"],"prompt":"Role: คุณคือผู้ตรวจ SEO เชิงเทคนิค\nTask: ตรวจ canonical เทียบ sitemap\nContext: [รายการ URL และ metadata]\nFormat: ตาราง ผ่าน/ไม่ผ่าน/วิธีแก้\nConstraints: ไม่สร้าง URL ที่ตรวจไม่พบและไม่อ้างผล Search Console"},
-    {"id":"FAQ-PPRM-001","category":"PPRM / Risk Management ของ กฟผ.","level":"Beginner","question":"เว็บไซต์นี้ยืนยันคำเต็มของ PPRM แล้วหรือยัง?","answer":"ยังไม่ยืนยัน เว็บไซต์จะไม่เผยแพร่คำเต็มจนกว่าจะมีคู่มือ เอกสาร หรือผู้ดูแลระบบที่ได้รับอนุญาตยืนยัน เนื้อหาเริ่มต้นจึงกล่าวถึง Risk Management ในระดับทั่วไปเท่านั้น","tags":["governance","verification"],"prompt":"Role: คุณคือผู้ช่วยตรวจเอกสาร\nTask: หาเฉพาะข้อความที่นิยาม PPRM\nContext: [เอกสารที่ได้รับอนุญาต]\nFormat: ข้อความอ้างอิง เลขหน้า วันที่เอกสาร และสถานะการยืนยัน\nConstraints: หากไม่พบให้ตอบว่าไม่พบ ห้ามเดาคำเต็ม"},
-    {"id":"FAQ-PPRM-002","category":"PPRM / Risk Management ของ กฟผ.","level":"Intermediate","question":"Risk statement ที่ตรวจสอบได้ควรมีอะไร?","answer":"ในกรอบทั่วไปควรระบุสาเหตุ เหตุการณ์ความเสี่ยง และผลกระทบให้แยกกันชัด แต่รูปแบบจริงต้องอ้างคู่มือที่องค์กรอนุมัติ เจ้าของความเสี่ยงยังต้องยืนยันเนื้อหาและหลักฐานเอง","tags":["risk statement"],"prompt":"Role: คุณคือผู้ช่วยตรวจความครบถ้วน ไม่ใช่เจ้าของความเสี่ยง\nTask: แยก cause, event, impact จากข้อความ\nContext: [risk statement ที่เจ้าของให้]\nFormat: ตารางส่วนที่พบ ส่วนที่ขาด และคำถามกลับ\nConstraints: ห้ามสร้างเหตุการณ์ คะแนน เจ้าของ หรือมาตรการแทนผู้รับผิดชอบ"},
-    {"id":"FAQ-PPRM-003","category":"PPRM / Risk Management ของ กฟผ.","level":"Intermediate","question":"AI ช่วยทำ Risk Treatment Plan ได้แค่ไหน?","answer":"ช่วยจัดโครงสร้าง ตรวจช่องว่าง และตั้งคำถามจากข้อมูลที่ได้รับอนุญาตได้ แต่ไม่ควรกำหนด owner, due date, risk score หรือหลักฐานแทนผู้รับผิดชอบ เกณฑ์ทั้งหมดต้องอ้างเอกสารองค์กรฉบับที่ใช้จริง","tags":["treatment","control"],"prompt":"Role: คุณคือผู้ช่วย quality check แผนจัดการความเสี่ยง\nTask: ตรวจว่ามี action, owner, due date, evidence ตามข้อมูลหรือไม่\nContext: [แผนที่ได้รับอนุญาต]\nFormat: checklist พบ/ไม่พบ/ต้องยืนยัน\nConstraints: ห้ามเติมข้อมูล ห้ามประเมินคะแนน และห้ามขยายคำว่า PPRM"}
+    {
+      "id": "FAQ-MKT-001",
+      "category": "Marketing for Sales",
+      "level": "Beginner",
+      "question": "Customer persona ที่ดีควรเริ่มจากอะไร?",
+      "answer": "เริ่มจากหลักฐานของลูกค้าจริง เช่น บทสนทนา ปัญหาที่ถามซ้ำ และเหตุผลที่ซื้อหรือไม่ซื้อ แล้วแยกข้อเท็จจริงออกจากสมมติฐาน Persona เป็นเครื่องมือทบทวน ไม่ใช่ภาพเหมารวมของคนทั้งกลุ่ม",
+      "tags": [
+        "persona",
+        "sales"
+      ],
+      "prompt": "Role: คุณคือนักวิจัยลูกค้าที่ระมัดระวัง\nTask: สรุป persona จากข้อมูลที่ให้เท่านั้น\nContext: [วางบทสัมภาษณ์หรือบันทึกการขาย]\nFormat: ตาราง หลักฐาน / ข้อสังเกต / สิ่งที่ยังไม่ทราบ\nConstraints: ห้ามเดาอายุ รายได้ หรือแรงจูงใจที่ไม่มีในข้อมูล",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-MKT-002",
+        "FAQ-MKT-004"
+      ]
+    },
+    {
+      "id": "FAQ-MKT-002",
+      "category": "Marketing for Sales",
+      "level": "Beginner",
+      "question": "Value proposition ต่างจากคำโฆษณาอย่างไร?",
+      "answer": "Value proposition อธิบายว่าช่วยใคร แก้ปัญหาอะไร และต่างอย่างไรโดยมีหลักฐานรองรับ ส่วนคำโฆษณาคือวิธีสื่อสารข้อเสนอนั้นในแต่ละช่องทาง",
+      "tags": [
+        "value proposition"
+      ],
+      "prompt": "Role: คุณคือบรรณาธิการการตลาด\nTask: ตรวจ value proposition\nContext: ลูกค้า=[...] ปัญหา=[...] หลักฐาน=[...]\nFormat: จุดแข็ง ช่องว่าง และฉบับปรับปรุง 3 แบบ\nConstraints: ไม่เพิ่มผลลัพธ์หรือหลักฐานที่ผู้ใช้ไม่ได้ให้",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-MKT-003",
+        "FAQ-MKT-005"
+      ]
+    },
+    {
+      "id": "FAQ-MKT-003",
+      "category": "Marketing for Sales",
+      "level": "Intermediate",
+      "question": "ใช้ AI วิเคราะห์ยอดขายอย่างไรโดยไม่แต่งข้อมูล?",
+      "answer": "ส่งเฉพาะตารางที่จำเป็น ระบุความหมายคอลัมน์ ช่วงเวลา และสูตรที่ต้องใช้ บังคับให้ AI แสดงวิธีคำนวณและทำเครื่องหมายข้อมูลขาด ก่อนให้มนุษย์เทียบผลกับต้นฉบับ",
+      "tags": [
+        "analysis",
+        "quality gate"
+      ],
+      "prompt": "Role: คุณคือนักวิเคราะห์ยอดขาย\nTask: คำนวณผลรวมและส่วนต่างจากเป้า\nContext: [ตารางพร้อมนิยามคอลัมน์]\nFormat: ตารางผลลัพธ์ สูตร และรายการข้อมูลขาด\nConstraints: ห้ามเติมค่า ห้ามสรุปสาเหตุโดยไม่มีหลักฐาน และต้องระบุสิ่งที่มนุษย์ต้องตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-MKT-004",
+        "FAQ-MKT-006"
+      ]
+    },
+    {
+      "id": "FAQ-FIN-001",
+      "category": "Financial",
+      "level": "Beginner",
+      "question": "รายรับ กำไร และกระแสเงินสดต่างกันอย่างไร?",
+      "answer": "รายรับคือมูลค่าจากการขาย กำไรคือรายรับหักค่าใช้จ่ายตามเกณฑ์บัญชี ส่วนกระแสเงินสดคือเงินจริงที่เข้าและออกในช่วงเวลา ทั้งสามค่าอาจไม่เท่ากัน ข้อมูลนี้เป็นความรู้ทั่วไป ไม่ใช่คำแนะนำเฉพาะบุคคล",
+      "tags": [
+        "cash flow",
+        "profit"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยการเงินเพื่อการศึกษา\nTask: แยกรายการเป็นรายรับ ค่าใช้จ่าย และเงินสดเข้าออก\nContext: [รายการที่ผู้ใช้ให้]\nFormat: ตารางพร้อมเหตุผลและรายการที่ไม่แน่ใจ\nConstraints: ห้ามแต่งตัวเลข ต้องขอข้อมูลเพิ่มเมื่อจำแนกไม่ได้",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-FIN-002",
+        "FAQ-FIN-004"
+      ]
+    },
+    {
+      "id": "FAQ-FIN-002",
+      "category": "Financial",
+      "level": "Intermediate",
+      "question": "Variance analysis ควรอ่านอย่างไร?",
+      "answer": "คำนวณ Actual ลบ Budget ให้สอดคล้องทุกแถว แล้วแยกผลต่างที่ดีหรือไม่ดีตามบริบท อย่าสรุปสาเหตุจากตัวเลขเพียงอย่างเดียว ต้องตรวจรายการธุรกรรม ช่วงเวลา และนิยามงบประมาณก่อน",
+      "tags": [
+        "variance",
+        "budget"
+      ],
+      "prompt": "Role: คุณคือนักวิเคราะห์งบประมาณที่ระมัดระวัง\nTask: คำนวณ Actual - Budget\nContext: [ตารางและนิยามสัญลักษณ์]\nFormat: ตาราง สูตร ผลต่าง และคำถามติดตาม\nConstraints: ห้ามอ้างสาเหตุที่ไม่มีหลักฐาน ผลลัพธ์ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-FIN-003",
+        "FAQ-FIN-005"
+      ]
+    },
+    {
+      "id": "FAQ-FIN-003",
+      "category": "Financial",
+      "level": "Intermediate",
+      "question": "AI ทำ Forecast ให้เชื่อถือได้หรือไม่?",
+      "answer": "AI ช่วยจัดโครงสร้าง Scenario และคำนวณตามสมมติฐานได้ แต่ไม่รับประกันอนาคต ควรแสดงสมมติฐาน แหล่งข้อมูล ช่วงความไม่แน่นอน และกรณีฐาน/ดี/แย่ให้ตรวจย้อนกลับได้ ข้อมูลนี้ไม่ใช่คำแนะนำการเงินเฉพาะบุคคล",
+      "tags": [
+        "forecast",
+        "scenario"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยวาง Scenario\nTask: คำนวณ 3 กรณีจากสมมติฐานที่กำหนด\nContext: ฐานข้อมูล=[...] สมมติฐาน=[...]\nFormat: ตารางสูตร ผลลัพธ์ และ sensitivity\nConstraints: ไม่สร้างอัตราเติบโตเอง ไม่ใช้คำว่ารับประกัน และระบุข้อจำกัด",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-FIN-004",
+        "FAQ-FIN-006"
+      ]
+    },
+    {
+      "id": "FAQ-YT-001",
+      "category": "YouTube",
+      "level": "Beginner",
+      "question": "ควรเริ่มวางช่อง YouTube จากอะไร?",
+      "answer": "กำหนดผู้ชมหนึ่งกลุ่ม ปัญหาหลักหนึ่งชุด และรูปแบบที่ผลิตซ้ำได้ ทดลองหัวข้อเป็นชุดเล็ก แล้วใช้ข้อมูลการรับชมจริงทบทวน แทนการคาดเดาว่าทุกคนคือผู้ชม",
+      "tags": [
+        "channel",
+        "audience"
+      ],
+      "prompt": "Role: คุณคือนักวางกลยุทธ์คอนเทนต์\nTask: เสนอเสาหลักช่องจากข้อมูลผู้ชม\nContext: ผู้ชม=[...] ปัญหา=[...] ทรัพยากร=[...]\nFormat: 3 เสาหลัก พร้อมเหตุผลและวิธีทดลอง\nConstraints: ไม่รับประกันยอดวิวและไม่อ้างข้อมูลแพลตฟอร์มที่ไม่ได้ให้",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-YT-002",
+        "FAQ-YT-004"
+      ]
+    },
+    {
+      "id": "FAQ-YT-002",
+      "category": "YouTube",
+      "level": "Intermediate",
+      "question": "Hook ที่ดีต้องหลอกให้คลิกหรือไม่?",
+      "answer": "ไม่ควร Hook ที่ดีบอกประโยชน์หรือความขัดแย้งอย่างตรงไปตรงมา และเนื้อหาต้องส่งมอบสิ่งที่ชื่อกับภาพปกสัญญาไว้ มิฉะนั้นความเชื่อใจและการรับชมต่อเนื่องจะเสียหาย",
+      "tags": [
+        "hook",
+        "retention"
+      ],
+      "prompt": "Role: คุณคือบรรณาธิการ YouTube\nTask: เขียน hook ที่ตรงกับเนื้อหา\nContext: ประเด็นหลัก=[...] หลักฐาน=[...]\nFormat: hook 5 แบบ พร้อมคำสัญญาที่แต่ละแบบต้องส่งมอบ\nConstraints: ห้าม clickbait ห้ามแต่งผลลัพธ์",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-YT-003",
+        "FAQ-YT-005"
+      ]
+    },
+    {
+      "id": "FAQ-YT-003",
+      "category": "YouTube",
+      "level": "Intermediate",
+      "question": "ควรใช้ Analytics ตัวไหนทบทวนวิดีโอ?",
+      "answer": "เริ่มจากเป้าหมายของวิดีโอ แล้วดูการแสดงผล การคลิก ระยะเวลารับชม และจุดที่ผู้ชมออกประกอบกัน ตัวเลขเดียวไม่บอกสาเหตุ และเกณฑ์ที่เหมาะสมต่างกันตามช่องและรูปแบบ",
+      "tags": [
+        "analytics",
+        "iteration"
+      ],
+      "prompt": "Role: คุณคือนักวิเคราะห์คอนเทนต์\nTask: สรุปสิ่งที่ข้อมูลบอกและยังบอกไม่ได้\nContext: [วางตัวเลขจาก Analytics พร้อมช่วงเวลา]\nFormat: ข้อสังเกต สมมติฐาน การทดลองถัดไป\nConstraints: ห้ามสร้าง benchmark หรือสรุปเหตุและผลจาก correlation",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-YT-004",
+        "FAQ-YT-006"
+      ]
+    },
+    {
+      "id": "FAQ-FB-001",
+      "category": "Facebook",
+      "level": "Beginner",
+      "question": "Content pillars ของเพจควรมีกี่เรื่อง?",
+      "answer": "ไม่มีจำนวนตายตัว เลือกเท่าที่ทีมผลิตสม่ำเสมอและผู้ชมเข้าใจได้ เริ่มจาก 3–5 เสาหลักที่เชื่อมกับเป้าหมาย แล้วทบทวนจากข้อมูลจริงแทนการเพิ่มหัวข้อไปเรื่อย ๆ",
+      "tags": [
+        "content pillars"
+      ],
+      "prompt": "Role: คุณคือนักวางแผนเพจ\nTask: จัดกลุ่มไอเดียเป็นเสาหลัก\nContext: เป้าหมาย=[...] ผู้ชม=[...] ไอเดีย=[...]\nFormat: ตารางเสาหลัก จุดประสงค์ ตัวอย่างโพสต์\nConstraints: รวมเฉพาะข้อมูลที่ให้และทำเครื่องหมายช่องว่าง",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-FB-002",
+        "FAQ-FB-004"
+      ]
+    },
+    {
+      "id": "FAQ-FB-002",
+      "category": "Facebook",
+      "level": "Beginner",
+      "question": "Caption ที่ดีต้องยาวแค่ไหน?",
+      "answer": "ให้ยาวเท่าที่จำเป็นต่อสารและบริบท เริ่มด้วยใจความที่ผู้อ่านเข้าใจได้เร็ว จัดย่อหน้าให้อ่านบนมือถือ และใช้ CTA ที่สอดคล้องกับเป้าหมาย ไม่มีกฎความยาวเดียวสำหรับทุกโพสต์",
+      "tags": [
+        "caption",
+        "cta"
+      ],
+      "prompt": "Role: คุณคือ copy editor\nTask: ปรับ caption ให้อ่านง่ายบนมือถือ\nContext: ข้อความต้นฉบับ=[...] เป้าหมาย=[...]\nFormat: ฉบับสั้นและฉบับเต็ม พร้อม CTA\nConstraints: รักษาข้อเท็จจริง ไม่เพิ่มคำรับรองหรือผลลัพธ์",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-FB-003",
+        "FAQ-FB-005"
+      ]
+    },
+    {
+      "id": "FAQ-FB-003",
+      "category": "Facebook",
+      "level": "Intermediate",
+      "question": "Reach ลดลงแปลว่าเนื้อหาไม่ดีหรือไม่?",
+      "answer": "ยังสรุปไม่ได้ Reach ขึ้นกับการกระจายโพสต์ รูปแบบ เวลา ผู้ชม และปัจจัยแพลตฟอร์ม ควรเทียบช่วงเวลาที่เหมาะสม ตรวจ engagement และ conversion ตามเป้าหมาย แล้วทดลองเปลี่ยนทีละปัจจัย",
+      "tags": [
+        "reach",
+        "experiment"
+      ],
+      "prompt": "Role: คุณคือนักวิเคราะห์เพจ\nTask: แยกข้อเท็จจริง สมมติฐาน และการทดลอง\nContext: [ข้อมูลโพสต์และช่วงเวลา]\nFormat: ตาราง 3 ส่วน\nConstraints: ห้ามอ้าง algorithm ที่ไม่มีแหล่งข้อมูลและไม่สรุปเหตุผลจากตัวเลขเดียว",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-FB-004",
+        "FAQ-FB-006"
+      ]
+    },
+    {
+      "id": "FAQ-WEB-001",
+      "category": "Website",
+      "level": "Beginner",
+      "question": "Domain, hosting และ HTTPS ทำหน้าที่ต่างกันอย่างไร?",
+      "answer": "Domain คือชื่อที่ใช้เข้าถึงเว็บไซต์ Hosting คือระบบที่เก็บและส่งไฟล์หรือรันแอป ส่วน HTTPS เข้ารหัสการเชื่อมต่อ ทั้งสามส่วนต้องตั้งค่าให้ทำงานร่วมกัน",
+      "tags": [
+        "domain",
+        "hosting",
+        "https"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยวางระบบเว็บไซต์\nTask: ตรวจรายการองค์ประกอบที่ต้องมี\nContext: รูปแบบเว็บ=[...] ผู้ให้บริการที่เลือก=[...]\nFormat: checklist พร้อมสิ่งที่ต้องยืนยัน\nConstraints: ห้ามสร้าง DNS ค่าใช้จ่าย หรือ credential",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-WEB-002",
+        "FAQ-WEB-004"
+      ]
+    },
+    {
+      "id": "FAQ-WEB-002",
+      "category": "Website",
+      "level": "Intermediate",
+      "question": "Static site ทำ Google Sign-In และ Admin ได้เองหรือไม่?",
+      "answer": "ไฟล์ static อย่างเดียวตรวจ token และปกป้องข้อมูลลับอย่างปลอดภัยไม่ได้ ต้องมี backend ที่ตรวจ identity token สร้าง session และบังคับสิทธิ์ทุก API ฝั่ง server การซ่อนเมนูด้วย JavaScript ไม่ใช่ authorization",
+      "tags": [
+        "security",
+        "oauth"
+      ],
+      "prompt": "Role: คุณคือ security reviewer\nTask: ตรวจ boundary ระหว่าง static frontend กับ backend\nContext: สถาปัตยกรรม=[...]\nFormat: threat, control, owner และ test\nConstraints: ห้ามเสนอให้เก็บ secret หรือ allowlist ใน frontend",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-WEB-003",
+        "FAQ-WEB-005"
+      ]
+    },
+    {
+      "id": "FAQ-WEB-003",
+      "category": "Website",
+      "level": "Intermediate",
+      "question": "Canonical URL และ sitemap ต่างกันอย่างไร?",
+      "answer": "Canonical บอก URL หลักของหน้าแต่ละหน้า ส่วน sitemap เป็นรายการ URL ที่ต้องการให้ระบบค้นหาค้นพบ ทั้งคู่ต้องใช้ URL จริงที่เปิดได้และสอดคล้องกัน",
+      "tags": [
+        "seo",
+        "sitemap"
+      ],
+      "prompt": "Role: คุณคือผู้ตรวจ SEO เชิงเทคนิค\nTask: ตรวจ canonical เทียบ sitemap\nContext: [รายการ URL และ metadata]\nFormat: ตาราง ผ่าน/ไม่ผ่าน/วิธีแก้\nConstraints: ไม่สร้าง URL ที่ตรวจไม่พบและไม่อ้างผล Search Console",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-WEB-004",
+        "FAQ-WEB-006"
+      ]
+    },
+    {
+      "id": "FAQ-PPRM-001",
+      "category": "PPRM / Risk Management ของ กฟผ.",
+      "level": "Beginner",
+      "question": "เว็บไซต์นี้ยืนยันคำเต็มของ PPRM แล้วหรือยัง?",
+      "answer": "ยังไม่ยืนยัน เว็บไซต์จะไม่เผยแพร่คำเต็มจนกว่าจะมีคู่มือ เอกสาร หรือผู้ดูแลระบบที่ได้รับอนุญาตยืนยัน เนื้อหาเริ่มต้นจึงกล่าวถึง Risk Management ในระดับทั่วไปเท่านั้น",
+      "tags": [
+        "governance",
+        "verification"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยตรวจเอกสาร\nTask: หาเฉพาะข้อความที่นิยาม PPRM\nContext: [เอกสารที่ได้รับอนุญาต]\nFormat: ข้อความอ้างอิง เลขหน้า วันที่เอกสาร และสถานะการยืนยัน\nConstraints: หากไม่พบให้ตอบว่าไม่พบ ห้ามเดาคำเต็ม",
+      "sourceStatus": "official-source-required",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "กรอบทั่วไปเท่านั้น ไม่ใช่คู่มือหรือเกณฑ์ของ กฟผ.",
+      "related": [
+        "FAQ-PPRM-002",
+        "FAQ-PPRM-004"
+      ]
+    },
+    {
+      "id": "FAQ-PPRM-002",
+      "category": "PPRM / Risk Management ของ กฟผ.",
+      "level": "Intermediate",
+      "question": "Risk statement ที่ตรวจสอบได้ควรมีอะไร?",
+      "answer": "ในกรอบทั่วไปควรระบุสาเหตุ เหตุการณ์ความเสี่ยง และผลกระทบให้แยกกันชัด แต่รูปแบบจริงต้องอ้างคู่มือที่องค์กรอนุมัติ เจ้าของความเสี่ยงยังต้องยืนยันเนื้อหาและหลักฐานเอง",
+      "tags": [
+        "risk statement"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยตรวจความครบถ้วน ไม่ใช่เจ้าของความเสี่ยง\nTask: แยก cause, event, impact จากข้อความ\nContext: [risk statement ที่เจ้าของให้]\nFormat: ตารางส่วนที่พบ ส่วนที่ขาด และคำถามกลับ\nConstraints: ห้ามสร้างเหตุการณ์ คะแนน เจ้าของ หรือมาตรการแทนผู้รับผิดชอบ",
+      "sourceStatus": "official-source-required",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "กรอบทั่วไปเท่านั้น ไม่ใช่คู่มือหรือเกณฑ์ของ กฟผ.",
+      "related": [
+        "FAQ-PPRM-003",
+        "FAQ-PPRM-005"
+      ]
+    },
+    {
+      "id": "FAQ-PPRM-003",
+      "category": "PPRM / Risk Management ของ กฟผ.",
+      "level": "Intermediate",
+      "question": "AI ช่วยทำ Risk Treatment Plan ได้แค่ไหน?",
+      "answer": "ช่วยจัดโครงสร้าง ตรวจช่องว่าง และตั้งคำถามจากข้อมูลที่ได้รับอนุญาตได้ แต่ไม่ควรกำหนด owner, due date, risk score หรือหลักฐานแทนผู้รับผิดชอบ เกณฑ์ทั้งหมดต้องอ้างเอกสารองค์กรฉบับที่ใช้จริง",
+      "tags": [
+        "treatment",
+        "control"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วย quality check แผนจัดการความเสี่ยง\nTask: ตรวจว่ามี action, owner, due date, evidence ตามข้อมูลหรือไม่\nContext: [แผนที่ได้รับอนุญาต]\nFormat: checklist พบ/ไม่พบ/ต้องยืนยัน\nConstraints: ห้ามเติมข้อมูล ห้ามประเมินคะแนน และห้ามขยายคำว่า PPRM",
+      "sourceStatus": "official-source-required",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "กรอบทั่วไปเท่านั้น ไม่ใช่คู่มือหรือเกณฑ์ของ กฟผ.",
+      "related": [
+        "FAQ-PPRM-004",
+        "FAQ-PPRM-006"
+      ]
+    },
+    {
+      "id": "FAQ-MKT-004",
+      "category": "Marketing for Sales",
+      "level": "Beginner",
+      "question": "จะหา pain point โดยไม่เดาได้อย่างไร?",
+      "answer": "รวบรวมถ้อยคำจากการสัมภาษณ์ คำถามก่อนซื้อ เหตุผลที่ไม่ซื้อ และงานที่ลูกค้าพยายามทำ จากนั้นนับรูปแบบที่เกิดซ้ำและเก็บข้อความต้นฉบับไว้เป็นหลักฐาน อย่าเปลี่ยนข้อสังเกตหนึ่งครั้งให้เป็นข้อสรุปของทั้งตลาด",
+      "tags": [
+        "pain point",
+        "research"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านMarketing for Salesที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “จะหา pain point โดยไม่เดาได้อย่างไร?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-MKT-005",
+        "FAQ-MKT-007"
+      ]
+    },
+    {
+      "id": "FAQ-MKT-005",
+      "category": "Marketing for Sales",
+      "level": "Beginner",
+      "question": "Marketing funnel กับ customer journey ต่างกันอย่างไร?",
+      "answer": "Funnel เป็นมุมมองของธุรกิจต่อขั้นตอนที่วัดได้ ส่วน journey เป็นมุมมองของลูกค้าต่อเป้าหมาย จุดสัมผัส คำถาม และอุปสรรค ใช้คู่กันได้ แต่ไม่ควรสมมติว่าทุกคนเดินตามเส้นทางเดียว",
+      "tags": [
+        "funnel",
+        "journey"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านMarketing for Salesที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “Marketing funnel กับ customer journey ต่างกันอย่างไร?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-MKT-006",
+        "FAQ-MKT-008"
+      ]
+    },
+    {
+      "id": "FAQ-MKT-006",
+      "category": "Marketing for Sales",
+      "level": "Intermediate",
+      "question": "ควรคัดกรอง lead ด้วยข้อมูลอะไร?",
+      "answer": "เริ่มจากความเหมาะสมของปัญหา ความต้องการจริง กรอบเวลา และข้อจำกัดที่ลูกค้ายินดีบอก ใช้เกณฑ์เดียวกันกับทุกคน บันทึกว่าไม่ทราบเมื่อข้อมูลขาด และหลีกเลี่ยงข้อมูลอ่อนไหวที่ไม่จำเป็น",
+      "tags": [
+        "lead qualification",
+        "privacy"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านMarketing for Salesที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “ควรคัดกรอง lead ด้วยข้อมูลอะไร?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-MKT-007",
+        "FAQ-MKT-009"
+      ]
+    },
+    {
+      "id": "FAQ-MKT-007",
+      "category": "Marketing for Sales",
+      "level": "Intermediate",
+      "question": "เขียน sales script อย่างไรให้ไม่กดดันลูกค้า?",
+      "answer": "ใช้สคริปต์เป็นแนวคำถาม: ขออนุญาต เข้าใจปัญหา สะท้อนสิ่งที่ได้ยิน อธิบายทางเลือกและข้อจำกัด แล้วเปิดทางให้ปฏิเสธได้ พนักงานต้องปรับตามคำตอบจริง ไม่อ่านบทเพื่อบังคับปิดการขาย",
+      "tags": [
+        "sales script",
+        "ethics"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านMarketing for Salesที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “เขียน sales script อย่างไรให้ไม่กดดันลูกค้า?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-MKT-008",
+        "FAQ-MKT-010"
+      ]
+    },
+    {
+      "id": "FAQ-MKT-008",
+      "category": "Marketing for Sales",
+      "level": "Intermediate",
+      "question": "รับมือ objection โดยไม่เถียงลูกค้าอย่างไร?",
+      "answer": "แยกว่าเป็นคำถาม ข้อกังวล หรือข้อจำกัดจริง ทวนให้ลูกค้ายืนยัน ตอบด้วยข้อมูลที่ตรวจสอบได้ และยอมรับเมื่อข้อเสนอไม่เหมาะ ห้ามสร้างคำรับรอง ส่วนลด หรือเงื่อนไขที่ไม่ได้รับอนุมัติ",
+      "tags": [
+        "objection",
+        "sales"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านMarketing for Salesที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “รับมือ objection โดยไม่เถียงลูกค้าอย่างไร?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-MKT-009",
+        "FAQ-MKT-001"
+      ]
+    },
+    {
+      "id": "FAQ-MKT-009",
+      "category": "Marketing for Sales",
+      "level": "Intermediate",
+      "question": "วาง campaign brief ให้ทีมทำงานตรงกันอย่างไร?",
+      "answer": "ระบุเป้าหมาย ผู้ชม ข้อเสนอ หลักฐาน ช่องทาง งบและช่วงเวลาที่ได้รับอนุมัติ เจ้าของงาน วิธีวัด และสิ่งที่ห้ามกล่าวอ้าง แยกค่าที่ยังไม่ทราบออกจากค่าที่ตัดสินใจแล้ว",
+      "tags": [
+        "campaign",
+        "brief"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านMarketing for Salesที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “วาง campaign brief ให้ทีมทำงานตรงกันอย่างไร?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-MKT-010",
+        "FAQ-MKT-002"
+      ]
+    },
+    {
+      "id": "FAQ-MKT-010",
+      "category": "Marketing for Sales",
+      "level": "Advanced",
+      "question": "Conversion rate, CAC และ ROAS ควรใช้ร่วมกันอย่างไร?",
+      "answer": "นิยาม numerator, denominator, ต้นทุน และช่วงเวลาให้ตรงกันก่อนคำนวณ Conversion บอกสัดส่วนการผ่านขั้น CAC บอกต้นทุนได้ลูกค้าตามนิยาม และ ROAS เทียบรายได้ที่กำหนดกับค่าโฆษณา ตัวเลขเหล่านี้ไม่แทนกำไรหรือคุณภาพลูกค้าทั้งหมด",
+      "tags": [
+        "kpi",
+        "cac",
+        "roas"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านMarketing for Salesที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “Conversion rate, CAC และ ROAS ควรใช้ร่วมกันอย่างไร?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-MKT-001",
+        "FAQ-MKT-003"
+      ]
+    },
+    {
+      "id": "FAQ-FIN-004",
+      "category": "Financial",
+      "level": "Beginner",
+      "question": "งบประมาณต่างจาก forecast อย่างไร?",
+      "answer": "งบประมาณคือแผนหรือกรอบที่อนุมัติ ส่วน forecast คือประมาณการล่าสุดจากข้อมูลและสมมติฐานที่มี จึงควรเก็บทั้งสองชุด แสดงเวอร์ชันและวันที่ และไม่เขียนทับกัน ข้อมูลนี้เป็นความรู้ทั่วไป",
+      "tags": [
+        "budget",
+        "forecast"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านFinancialที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “งบประมาณต่างจาก forecast อย่างไร?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ห้ามแต่งตัวเลข ต้องแสดงสมมติฐานและวิธีคำนวณ ระบุว่าเป็นข้อมูลทั่วไปและให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-FIN-005",
+        "FAQ-FIN-007"
+      ]
+    },
+    {
+      "id": "FAQ-FIN-005",
+      "category": "Financial",
+      "level": "Beginner",
+      "question": "ทำตารางกระแสเงินสดเบื้องต้นอย่างไร?",
+      "answer": "กำหนดยอดเงินต้นงวด แล้วเรียงเงินสดเข้ากับเงินสดออกตามวันที่จริง ยอดปลายงวดเท่ากับต้นงวดบวกเงินเข้าและลบเงินออก แยกรายการที่ยังไม่จ่ายและตรวจยอดกับบัญชีต้นทาง ข้อมูลนี้ไม่ใช่คำแนะนำเฉพาะบุคคล",
+      "tags": [
+        "cash flow",
+        "reconciliation"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านFinancialที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “ทำตารางกระแสเงินสดเบื้องต้นอย่างไร?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ห้ามแต่งตัวเลข ต้องแสดงสมมติฐานและวิธีคำนวณ ระบุว่าเป็นข้อมูลทั่วไปและให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-FIN-006",
+        "FAQ-FIN-008"
+      ]
+    },
+    {
+      "id": "FAQ-FIN-006",
+      "category": "Financial",
+      "level": "Intermediate",
+      "question": "Actual กับ Target ควรเทียบแบบเปอร์เซ็นต์เสมอหรือไม่?",
+      "answer": "ไม่เสมอไป ควรแสดงทั้งส่วนต่างจำนวนเงินและเปอร์เซ็นต์เมื่อฐานมีความหมาย ถ้าค่าเป้าหมายเป็นศูนย์ เปอร์เซ็นต์อาจคำนวณไม่ได้ ต้องระบุ N/A แทนการหารหรือแต่งค่า",
+      "tags": [
+        "actual",
+        "target",
+        "variance"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านFinancialที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “Actual กับ Target ควรเทียบแบบเปอร์เซ็นต์เสมอหรือไม่?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ห้ามแต่งตัวเลข ต้องแสดงสมมติฐานและวิธีคำนวณ ระบุว่าเป็นข้อมูลทั่วไปและให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-FIN-007",
+        "FAQ-FIN-009"
+      ]
+    },
+    {
+      "id": "FAQ-FIN-007",
+      "category": "Financial",
+      "level": "Intermediate",
+      "question": "AI ควรจัดการช่องว่างในตารางการเงินอย่างไร?",
+      "answer": "รักษาช่องว่างไว้และรายงานตำแหน่งที่ขาด แยกศูนย์ออกจากค่าว่าง ห้ามเติมค่าเฉลี่ยหรือค่าก่อนหน้าเอง หากจำเป็นต้องประมาณต้องได้รับสมมติฐานจากผู้รับผิดชอบและติดป้ายว่าเป็นประมาณการ",
+      "tags": [
+        "missing data",
+        "quality"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านFinancialที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “AI ควรจัดการช่องว่างในตารางการเงินอย่างไร?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ห้ามแต่งตัวเลข ต้องแสดงสมมติฐานและวิธีคำนวณ ระบุว่าเป็นข้อมูลทั่วไปและให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-FIN-008",
+        "FAQ-FIN-010"
+      ]
+    },
+    {
+      "id": "FAQ-FIN-008",
+      "category": "Financial",
+      "level": "Intermediate",
+      "question": "ตรวจสูตรจาก AI ก่อนใช้งานอย่างไร?",
+      "answer": "สุ่มคำนวณด้วยมือ ตรวจหน่วย เครื่องหมาย ช่วงเซลล์ การปัดเศษ และยอดรวมย่อย เทียบผลกับแหล่งต้นฉบับ และให้ผู้มีหน้าที่อนุมัติตรวจ โดยเฉพาะข้อมูลภาษี บัญชี หรือการลงทุน",
+      "tags": [
+        "formula",
+        "review"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านFinancialที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “ตรวจสูตรจาก AI ก่อนใช้งานอย่างไร?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ห้ามแต่งตัวเลข ต้องแสดงสมมติฐานและวิธีคำนวณ ระบุว่าเป็นข้อมูลทั่วไปและให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-FIN-009",
+        "FAQ-FIN-001"
+      ]
+    },
+    {
+      "id": "FAQ-FIN-009",
+      "category": "Financial",
+      "level": "Advanced",
+      "question": "Scenario analysis ควรแสดงอะไรบ้าง?",
+      "answer": "แสดงค่าฐาน สมมติฐานที่เปลี่ยน สูตร ผลลัพธ์ และสิ่งที่คงเดิมสำหรับแต่ละกรณี หลีกเลี่ยงชื่อดีหรือแย่ถ้าไม่มีเกณฑ์ และไม่ผูกความน่าจะเป็นที่ไม่มีหลักฐาน ข้อมูลนี้ไม่ใช่คำพยากรณ์",
+      "tags": [
+        "scenario",
+        "assumptions"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านFinancialที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “Scenario analysis ควรแสดงอะไรบ้าง?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ห้ามแต่งตัวเลข ต้องแสดงสมมติฐานและวิธีคำนวณ ระบุว่าเป็นข้อมูลทั่วไปและให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-FIN-010",
+        "FAQ-FIN-002"
+      ]
+    },
+    {
+      "id": "FAQ-FIN-010",
+      "category": "Financial",
+      "level": "Intermediate",
+      "question": "ทำไมกำไรเป็นบวกแต่เงินสดอาจลดลง?",
+      "answer": "จังหวะรับและจ่ายเงินอาจไม่ตรงกับการรับรู้รายได้และค่าใช้จ่าย เช่น ลูกหนี้ สินค้าคงเหลือ การลงทุน หรือชำระหนี้ ต้องดูรายการจริงและงบที่เกี่ยวข้อง ไม่ควรวินิจฉัยสาเหตุจากกำไรเพียงตัวเดียว",
+      "tags": [
+        "profit",
+        "cash flow"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านFinancialที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “ทำไมกำไรเป็นบวกแต่เงินสดอาจลดลง?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ห้ามแต่งตัวเลข ต้องแสดงสมมติฐานและวิธีคำนวณ ระบุว่าเป็นข้อมูลทั่วไปและให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-FIN-001",
+        "FAQ-FIN-003"
+      ]
+    },
+    {
+      "id": "FAQ-YT-004",
+      "category": "YouTube",
+      "level": "Beginner",
+      "question": "เลือกหัวข้อวิดีโอจากอะไร?",
+      "answer": "เชื่อมคำถามของผู้ชมกับความเชี่ยวชาญและหลักฐานที่ทีมมี จัดกลุ่มหัวข้อเป็นชุด แล้วทดลองชื่อ มุม และรูปแบบทีละตัวแปร ไม่จำเป็นต้องไล่ตามกระแสที่ไม่ตรงกับช่อง",
+      "tags": [
+        "topic",
+        "audience"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านYouTubeที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “เลือกหัวข้อวิดีโอจากอะไร?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-YT-005",
+        "FAQ-YT-007"
+      ]
+    },
+    {
+      "id": "FAQ-YT-005",
+      "category": "YouTube",
+      "level": "Intermediate",
+      "question": "ชื่อวิดีโอและ thumbnail ควรแบ่งหน้าที่กันอย่างไร?",
+      "answer": "ชื่อควรให้บริบทที่ค้นหาและเข้าใจได้ ส่วนภาพปกช่วยสื่อแก่นหรือความตึงเครียดอย่างรวดเร็ว ทั้งคู่ต้องสัญญาเรื่องเดียวกับเนื้อหาและไม่สร้างผลลัพธ์เกินจริง",
+      "tags": [
+        "title",
+        "thumbnail"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านYouTubeที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “ชื่อวิดีโอและ thumbnail ควรแบ่งหน้าที่กันอย่างไร?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-YT-006",
+        "FAQ-YT-008"
+      ]
+    },
+    {
+      "id": "FAQ-YT-006",
+      "category": "YouTube",
+      "level": "Intermediate",
+      "question": "Shorts กับวิดีโอยาวควรใช้เรื่องเดียวกันหรือไม่?",
+      "answer": "ใช้แก่นเดียวกันได้แต่ต้องออกแบบจังหวะและความครบถ้วนตามรูปแบบ Shorts อาจตอบคำถามเดียวหรือพาไปยังเนื้อหาลึกกว่า โดยไม่ตัดจนทำให้ข้อเท็จจริงหรือข้อจำกัดหายไป",
+      "tags": [
+        "shorts",
+        "format"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านYouTubeที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “Shorts กับวิดีโอยาวควรใช้เรื่องเดียวกันหรือไม่?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-YT-007",
+        "FAQ-YT-009"
+      ]
+    },
+    {
+      "id": "FAQ-YT-007",
+      "category": "YouTube",
+      "level": "Beginner",
+      "question": "Storyboard แบบง่ายควรมีอะไร?",
+      "answer": "แบ่งเป็นช่วงเวลาโดยระบุภาพ เสียงหรือคำพูด ข้อความบนจอ หลักฐาน/asset และจุดเปลี่ยนแต่ละช่วง ทำให้ทีมตรวจความต่อเนื่อง ลิขสิทธิ์ และทรัพยากรก่อนถ่าย",
+      "tags": [
+        "storyboard",
+        "production"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านYouTubeที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “Storyboard แบบง่ายควรมีอะไร?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-YT-008",
+        "FAQ-YT-010"
+      ]
+    },
+    {
+      "id": "FAQ-YT-008",
+      "category": "YouTube",
+      "level": "Intermediate",
+      "question": "Publishing checklist ช่วยอะไร?",
+      "answer": "ช่วยตรวจชื่อ คำอธิบาย ภาพปก คำบรรยาย แหล่งอ้างอิง สิทธิ์ใช้สื่อ disclosure playlist และลิงก์ก่อนเผยแพร่ ควรมีผู้รับผิดชอบและสถานะผ่าน/ไม่ผ่านแทนการจำเอาเอง",
+      "tags": [
+        "publishing",
+        "checklist"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านYouTubeที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “Publishing checklist ช่วยอะไร?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-YT-009",
+        "FAQ-YT-001"
+      ]
+    },
+    {
+      "id": "FAQ-YT-009",
+      "category": "YouTube",
+      "level": "Advanced",
+      "question": "วิเคราะห์ retention graph อย่างไรไม่ให้สรุปเกินข้อมูล?",
+      "answer": "มองหาช่วงเปลี่ยนแปลงแล้วกลับไปดูเนื้อหา ณ เวลานั้น เปรียบเทียบวิดีโอที่มีผู้ชมและรูปแบบใกล้กัน จุดตกบอกตำแหน่ง ไม่ได้บอกเหตุผล จึงต้องตั้งสมมติฐานและทดลอง",
+      "tags": [
+        "retention",
+        "analytics"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านYouTubeที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “วิเคราะห์ retention graph อย่างไรไม่ให้สรุปเกินข้อมูล?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-YT-010",
+        "FAQ-YT-002"
+      ]
+    },
+    {
+      "id": "FAQ-YT-010",
+      "category": "YouTube",
+      "level": "Intermediate",
+      "question": "ใช้เพลง ภาพ หรือคลิปของผู้อื่นได้เมื่อใด?",
+      "answer": "ต้องมีสิทธิ์หรือใบอนุญาตที่ครอบคลุมการใช้งานจริง บันทึกแหล่งและเงื่อนไขไว้ การให้เครดิตอย่างเดียวไม่เท่ากับได้รับอนุญาต และข้อยกเว้นทางกฎหมายต้องประเมินตามบริบท",
+      "tags": [
+        "copyright",
+        "licensing"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านYouTubeที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “ใช้เพลง ภาพ หรือคลิปของผู้อื่นได้เมื่อใด?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-YT-001",
+        "FAQ-YT-003"
+      ]
+    },
+    {
+      "id": "FAQ-FB-004",
+      "category": "Facebook",
+      "level": "Beginner",
+      "question": "วาง positioning ของเพจอย่างไร?",
+      "answer": "เขียนให้ชัดว่าเพจช่วยใครเรื่องอะไร ด้วยมุมมองหรือหลักฐานแบบใด แล้วตรวจว่าชื่อ Bio ภาพ และเสาหลักเนื้อหาสื่อสารตรงกัน Positioning เป็นสมมติฐานที่ต้องทดสอบกับผู้ชมจริง",
+      "tags": [
+        "positioning",
+        "page"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านFacebookที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “วาง positioning ของเพจอย่างไร?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-FB-005",
+        "FAQ-FB-007"
+      ]
+    },
+    {
+      "id": "FAQ-FB-005",
+      "category": "Facebook",
+      "level": "Beginner",
+      "question": "Post, Reel, Story และ Live เลือกใช้อย่างไร?",
+      "answer": "เลือกจากงานของผู้ชมและทรัพยากรทีม: Post เหมาะกับข้อความที่ทบทวนได้ Reel เหมาะกับการสาธิตกระชับ Story เหมาะกับอัปเดตชั่วคราว และ Live เหมาะกับปฏิสัมพันธ์สด แต่ข้อจำกัดแพลตฟอร์มอาจเปลี่ยน",
+      "tags": [
+        "formats",
+        "planning"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านFacebookที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “Post, Reel, Story และ Live เลือกใช้อย่างไร?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-FB-006",
+        "FAQ-FB-008"
+      ]
+    },
+    {
+      "id": "FAQ-FB-006",
+      "category": "Facebook",
+      "level": "Intermediate",
+      "question": "CTA ควรมีหลายคำสั่งในโพสต์เดียวหรือไม่?",
+      "answer": "โดยทั่วไปเลือกการกระทำหลักที่สอดคล้องกับเป้าหมายหนึ่งอย่าง และให้ทางเลือกเสริมเท่าที่จำเป็น CTA ต้องบอกสิ่งที่จะเกิดขึ้นจริง ไม่ซ่อนค่าใช้จ่าย เงื่อนไข หรือการเก็บข้อมูล",
+      "tags": [
+        "cta",
+        "conversion"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านFacebookที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “CTA ควรมีหลายคำสั่งในโพสต์เดียวหรือไม่?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-FB-007",
+        "FAQ-FB-009"
+      ]
+    },
+    {
+      "id": "FAQ-FB-007",
+      "category": "Facebook",
+      "level": "Beginner",
+      "question": "Hashtag ช่วยเพิ่ม reach เสมอหรือไม่?",
+      "answer": "ไม่ควรรับประกัน ใช้คำที่เกี่ยวข้องและช่วยจัดบริบทเท่านั้น แล้ววัดเทียบกับโพสต์และผู้ชมของเพจเอง ความสามารถและการกระจายเนื้อหาของแพลตฟอร์มอาจเปลี่ยนได้",
+      "tags": [
+        "hashtag",
+        "reach"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านFacebookที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “Hashtag ช่วยเพิ่ม reach เสมอหรือไม่?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-FB-008",
+        "FAQ-FB-010"
+      ]
+    },
+    {
+      "id": "FAQ-FB-008",
+      "category": "Facebook",
+      "level": "Intermediate",
+      "question": "ทำ content calendar ที่ปรับได้อย่างไร?",
+      "answer": "กำหนดหัวข้อ รูปแบบ เป้าหมาย เจ้าของ สถานะ asset วันตรวจ และวันเผยแพร่ พร้อมช่องสำหรับเหตุผลที่เลื่อน รักษาพื้นที่สำหรับเหตุการณ์จริงแทนการล็อกทุกโพสต์ล่วงหน้า",
+      "tags": [
+        "calendar",
+        "workflow"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านFacebookที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “ทำ content calendar ที่ปรับได้อย่างไร?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-FB-009",
+        "FAQ-FB-001"
+      ]
+    },
+    {
+      "id": "FAQ-FB-009",
+      "category": "Facebook",
+      "level": "Intermediate",
+      "question": "ตอบคอมเมนต์เชิงลบอย่างไร?",
+      "answer": "แยกคำวิจารณ์ คำถาม ข้อมูลผิด และการคุกคาม ตอบข้อเท็จจริงอย่างสุภาพ ย้ายข้อมูลส่วนตัวไปช่องทางปลอดภัย และใช้กติกาชุมชนที่เผยแพร่ไว้ ห้ามเปิดเผยข้อมูลลูกค้าเพื่อโต้แย้ง",
+      "tags": [
+        "community",
+        "privacy"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านFacebookที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “ตอบคอมเมนต์เชิงลบอย่างไร?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-FB-010",
+        "FAQ-FB-002"
+      ]
+    },
+    {
+      "id": "FAQ-FB-010",
+      "category": "Facebook",
+      "level": "Advanced",
+      "question": "อ่านผลโฆษณา Facebook เบื้องต้นอย่างไร?",
+      "answer": "เริ่มจากวัตถุประสงค์และช่วงเวลา ตรวจยอดใช้จ่าย การส่งมอบ การกระทำตามนิยาม และคุณภาพปลายทาง เทียบกลุ่มที่ตั้งเงื่อนไขใกล้กัน และอย่าสรุปกำไรหรือ causality จากตัวเลขหน้าแพลตฟอร์มอย่างเดียว",
+      "tags": [
+        "ads",
+        "analytics"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านFacebookที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “อ่านผลโฆษณา Facebook เบื้องต้นอย่างไร?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-FB-001",
+        "FAQ-FB-003"
+      ]
+    },
+    {
+      "id": "FAQ-WEB-004",
+      "category": "Website",
+      "level": "Beginner",
+      "question": "Responsive design ต้องทดสอบอะไรบ้าง?",
+      "answer": "ทดสอบเนื้อหา เมนู ฟอร์ม ตาราง ภาพ และสถานะ error ที่หลายความกว้าง รวมการซูมและแนวตั้ง/แนวนอน อย่ายึดเฉพาะรุ่นอุปกรณ์ แต่ตรวจจุดที่ layout เริ่มเสีย",
+      "tags": [
+        "responsive",
+        "testing"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านWebsiteที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “Responsive design ต้องทดสอบอะไรบ้าง?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-WEB-005",
+        "FAQ-WEB-007"
+      ]
+    },
+    {
+      "id": "FAQ-WEB-005",
+      "category": "Website",
+      "level": "Beginner",
+      "question": "Accessibility เริ่มตรวจจากจุดใด?",
+      "answer": "เริ่มจากโครงสร้าง heading, landmark, label, alt text, contrast, focus และการใช้งานด้วยคีย์บอร์ด จากนั้นใช้เครื่องมืออัตโนมัติร่วมกับการทดสอบจริง เพราะเครื่องมือหาได้เพียงบางปัญหา",
+      "tags": [
+        "accessibility",
+        "keyboard"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านWebsiteที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “Accessibility เริ่มตรวจจากจุดใด?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-WEB-006",
+        "FAQ-WEB-008"
+      ]
+    },
+    {
+      "id": "FAQ-WEB-006",
+      "category": "Website",
+      "level": "Intermediate",
+      "question": "Structured data ใส่อะไรก็ได้เพื่อ SEO หรือไม่?",
+      "answer": "ไม่ได้ ข้อมูลต้องตรงกับประเภทและเนื้อหาที่ผู้ใช้มองเห็น ห้ามใส่ rating, ราคา, FAQ หรือองค์กรที่ไม่มีจริง และควรตรวจ syntax กับข้อกำหนดปัจจุบันก่อนเผยแพร่",
+      "tags": [
+        "structured data",
+        "seo"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านWebsiteที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “Structured data ใส่อะไรก็ได้เพื่อ SEO หรือไม่?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-WEB-007",
+        "FAQ-WEB-009"
+      ]
+    },
+    {
+      "id": "FAQ-WEB-007",
+      "category": "Website",
+      "level": "Advanced",
+      "question": "Core Web Vitals ควรแก้อย่างไร?",
+      "answer": "วัดก่อนว่าองค์ประกอบใดกระทบการโหลด การตอบสนอง หรือการขยับ layout แล้วแก้ที่สาเหตุ เช่น ขนาดภาพ งาน JavaScript หรือมิติที่ไม่กำหนด ต้องแยกข้อมูลภาคสนามจากการทดสอบในห้องทดลอง",
+      "tags": [
+        "performance",
+        "cwv"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านWebsiteที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “Core Web Vitals ควรแก้อย่างไร?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-WEB-008",
+        "FAQ-WEB-010"
+      ]
+    },
+    {
+      "id": "FAQ-WEB-008",
+      "category": "Website",
+      "level": "Intermediate",
+      "question": "Analytics ที่เคารพความเป็นส่วนตัวควรทำอะไร?",
+      "answer": "กำหนดวัตถุประสงค์ เก็บเฉพาะ event ที่จำเป็น หลีกเลี่ยงข้อมูลส่วนบุคคล ระบุระยะเก็บ และขอ consent ก่อนโหลดเทคโนโลยีที่ต้องขอ ผู้ใช้ต้องเปลี่ยนใจได้",
+      "tags": [
+        "analytics",
+        "consent"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านWebsiteที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “Analytics ที่เคารพความเป็นส่วนตัวควรทำอะไร?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-WEB-009",
+        "FAQ-WEB-001"
+      ]
+    },
+    {
+      "id": "FAQ-WEB-009",
+      "category": "Website",
+      "level": "Intermediate",
+      "question": "ควรรับมือหน้า 404 อย่างไร?",
+      "answer": "ตอบสถานะ HTTP ที่ถูกต้องเมื่อโฮสต์รองรับ อธิบายอย่างปลอดภัย เสนอค้นหาและทางกลับ ไม่เปิดเผย path ภายในหรือ stack trace และตรวจลิงก์เสียเป็นส่วนหนึ่งของ build",
+      "tags": [
+        "404",
+        "reliability"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านWebsiteที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “ควรรับมือหน้า 404 อย่างไร?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-WEB-010",
+        "FAQ-WEB-002"
+      ]
+    },
+    {
+      "id": "FAQ-WEB-010",
+      "category": "Website",
+      "level": "Intermediate",
+      "question": "Backup กับ version control เหมือนกันหรือไม่?",
+      "answer": "ไม่เหมือน Version control เก็บประวัติการเปลี่ยนไฟล์ ส่วน backup ช่วยกู้ข้อมูลและระบบจากเหตุเสียหาย ต้องกำหนดขอบเขต รอบเก็บ ที่จัดเก็บ และทดสอบการกู้คืน ไม่ใช่เพียงตรวจว่ามีไฟล์สำรอง",
+      "tags": [
+        "backup",
+        "version control"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านWebsiteที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “Backup กับ version control เหมือนกันหรือไม่?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะข้อมูลที่ให้ แยกข้อเท็จจริงจากสมมติฐาน ห้ามรับประกันผล และระบุสิ่งที่ต้องให้มนุษย์ตรวจ",
+      "sourceStatus": "general-practice-needs-context-review",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "ต้องปรับตามบริบทและข้อกำหนดปัจจุบัน",
+      "related": [
+        "FAQ-WEB-001",
+        "FAQ-WEB-003"
+      ]
+    },
+    {
+      "id": "FAQ-PPRM-004",
+      "category": "PPRM / Risk Management ของ กฟผ.",
+      "level": "Beginner",
+      "question": "Risk inventory คืออะไรในกรอบทั่วไป?",
+      "answer": "คือรายการความเสี่ยงและข้อมูลประกอบที่องค์กรกำหนดเพื่อทบทวนร่วมกัน แต่ชื่อช่อง สถานะ และรอบรายงานของ กฟผ. ต้องยืนยันจากเอกสารที่ได้รับอนุญาต เว็บไซต์นี้ยังไม่อ้างว่าเป็นแบบฟอร์ม PPRM ทางการ",
+      "tags": [
+        "risk inventory",
+        "verification"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านPPRM / Risk Management ของ กฟผ.ที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “Risk inventory คืออะไรในกรอบทั่วไป?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะเอกสารที่ได้รับอนุญาต ห้ามแต่งคะแนน เกณฑ์ เจ้าของ หรือคำเต็ม PPRM และให้ผู้รับผิดชอบยืนยัน",
+      "sourceStatus": "official-source-required",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "กรอบทั่วไปเท่านั้น ไม่ใช่คู่มือหรือเกณฑ์ของ กฟผ.",
+      "related": [
+        "FAQ-PPRM-005",
+        "FAQ-PPRM-007"
+      ]
+    },
+    {
+      "id": "FAQ-PPRM-005",
+      "category": "PPRM / Risk Management ของ กฟผ.",
+      "level": "Beginner",
+      "question": "แยก cause, event และ impact อย่างไร?",
+      "answer": "Cause คือเงื่อนไขที่อาจนำไปสู่เหตุการณ์ Event คือสิ่งไม่แน่นอนที่อาจเกิด และ Impact คือผลต่อวัตถุประสงค์ การแยกนี้เป็นกรอบทั่วไป เจ้าของความเสี่ยงต้องตรวจถ้อยคำและความเชื่อมโยงเอง",
+      "tags": [
+        "cause",
+        "event",
+        "impact"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านPPRM / Risk Management ของ กฟผ.ที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “แยก cause, event และ impact อย่างไร?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะเอกสารที่ได้รับอนุญาต ห้ามแต่งคะแนน เกณฑ์ เจ้าของ หรือคำเต็ม PPRM และให้ผู้รับผิดชอบยืนยัน",
+      "sourceStatus": "official-source-required",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "กรอบทั่วไปเท่านั้น ไม่ใช่คู่มือหรือเกณฑ์ของ กฟผ.",
+      "related": [
+        "FAQ-PPRM-006",
+        "FAQ-PPRM-008"
+      ]
+    },
+    {
+      "id": "FAQ-PPRM-006",
+      "category": "PPRM / Risk Management ของ กฟผ.",
+      "level": "Intermediate",
+      "question": "ใครควรกำหนด likelihood และ impact?",
+      "answer": "ผู้มีอำนาจและความรู้ตามกระบวนการองค์กรต้องประเมินจากหลักฐานและเกณฑ์ฉบับที่อนุมัติ AI ไม่ควรสร้างคะแนนหรือเกณฑ์ขึ้นเอง และเว็บไซต์นี้ยังไม่มีเกณฑ์ PPRM ของ กฟผ. ที่ยืนยันแล้ว",
+      "tags": [
+        "likelihood",
+        "impact",
+        "owner"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านPPRM / Risk Management ของ กฟผ.ที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “ใครควรกำหนด likelihood และ impact?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะเอกสารที่ได้รับอนุญาต ห้ามแต่งคะแนน เกณฑ์ เจ้าของ หรือคำเต็ม PPRM และให้ผู้รับผิดชอบยืนยัน",
+      "sourceStatus": "official-source-required",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "กรอบทั่วไปเท่านั้น ไม่ใช่คู่มือหรือเกณฑ์ของ กฟผ.",
+      "related": [
+        "FAQ-PPRM-007",
+        "FAQ-PPRM-009"
+      ]
+    },
+    {
+      "id": "FAQ-PPRM-007",
+      "category": "PPRM / Risk Management ของ กฟผ.",
+      "level": "Advanced",
+      "question": "Risk appetite และ tolerance ใช้แทนกันได้หรือไม่?",
+      "answer": "ไม่ควรสรุปว่าเหมือนกันโดยไม่มีนิยามขององค์กร ทั้งสองคำอาจมีความหมายและระดับการใช้ต่างกัน ต้องอ้างเอกสารฉบับ วันที่ และผู้อนุมัติ เว็บไซต์จะไม่กำหนดค่าหรือคำจำกัดความแทน กฟผ.",
+      "tags": [
+        "risk appetite",
+        "tolerance"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านPPRM / Risk Management ของ กฟผ.ที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “Risk appetite และ tolerance ใช้แทนกันได้หรือไม่?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะเอกสารที่ได้รับอนุญาต ห้ามแต่งคะแนน เกณฑ์ เจ้าของ หรือคำเต็ม PPRM และให้ผู้รับผิดชอบยืนยัน",
+      "sourceStatus": "official-source-required",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "กรอบทั่วไปเท่านั้น ไม่ใช่คู่มือหรือเกณฑ์ของ กฟผ.",
+      "related": [
+        "FAQ-PPRM-008",
+        "FAQ-PPRM-010"
+      ]
+    },
+    {
+      "id": "FAQ-PPRM-008",
+      "category": "PPRM / Risk Management ของ กฟผ.",
+      "level": "Advanced",
+      "question": "KRI ที่ดีควรตรวจอะไรในกรอบทั่วไป?",
+      "answer": "ตรวจความเชื่อมโยงกับความเสี่ยง แหล่งข้อมูล สูตร หน่วย ความถี่ เจ้าของข้อมูล เกณฑ์แจ้งเตือน และการตอบสนอง แต่ค่าจริงต้องมาจากข้อมูลและเกณฑ์ที่องค์กรอนุมัติ ห้ามให้ AI แต่ง threshold",
+      "tags": [
+        "kri",
+        "monitoring"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านPPRM / Risk Management ของ กฟผ.ที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “KRI ที่ดีควรตรวจอะไรในกรอบทั่วไป?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะเอกสารที่ได้รับอนุญาต ห้ามแต่งคะแนน เกณฑ์ เจ้าของ หรือคำเต็ม PPRM และให้ผู้รับผิดชอบยืนยัน",
+      "sourceStatus": "official-source-required",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "กรอบทั่วไปเท่านั้น ไม่ใช่คู่มือหรือเกณฑ์ของ กฟผ.",
+      "related": [
+        "FAQ-PPRM-009",
+        "FAQ-PPRM-001"
+      ]
+    },
+    {
+      "id": "FAQ-PPRM-009",
+      "category": "PPRM / Risk Management ของ กฟผ.",
+      "level": "Intermediate",
+      "question": "Control ต่างจาก treatment action อย่างไร?",
+      "answer": "โดยทั่วไป control คือสิ่งที่ทำอยู่เพื่อปรับความเสี่ยง ส่วน treatment action คือแผนเพิ่มหรือเปลี่ยนการตอบสนอง อย่างไรก็ตามคำจำกัดความและสถานะในระบบจริงต้องตรวจคู่มือองค์กร",
+      "tags": [
+        "control",
+        "treatment"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านPPRM / Risk Management ของ กฟผ.ที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “Control ต่างจาก treatment action อย่างไร?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะเอกสารที่ได้รับอนุญาต ห้ามแต่งคะแนน เกณฑ์ เจ้าของ หรือคำเต็ม PPRM และให้ผู้รับผิดชอบยืนยัน",
+      "sourceStatus": "official-source-required",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "กรอบทั่วไปเท่านั้น ไม่ใช่คู่มือหรือเกณฑ์ของ กฟผ.",
+      "related": [
+        "FAQ-PPRM-010",
+        "FAQ-PPRM-002"
+      ]
+    },
+    {
+      "id": "FAQ-PPRM-010",
+      "category": "PPRM / Risk Management ของ กฟผ.",
+      "level": "Advanced",
+      "question": "รายงาน residual risk ได้เมื่อใด?",
+      "answer": "รายงานได้เมื่อมีวิธีประเมิน หลักฐานสถานะ control และเกณฑ์ที่ได้รับอนุมัติครบ AI ช่วยตรวจช่องว่างได้แต่ไม่ควรคำนวณหรือรับรองคะแนนแทนเจ้าของความเสี่ยง เนื้อหานี้เป็นกรอบทั่วไปเท่านั้น",
+      "tags": [
+        "residual risk",
+        "evidence"
+      ],
+      "prompt": "Role: คุณคือผู้ช่วยด้านPPRM / Risk Management ของ กฟผ.ที่ระมัดระวัง\nTask: วิเคราะห์คำถาม “รายงาน residual risk ได้เมื่อใด?” จากข้อมูลของผู้ใช้\nContext: [วางเป้าหมาย ข้อมูลต้นฉบับ นิยาม และข้อจำกัดที่ทราบ]\nFormat: ข้อเท็จจริง / ช่องว่าง / ขั้นตอนถัดไป / จุดที่ต้องตรวจ\nConstraints: ใช้เฉพาะเอกสารที่ได้รับอนุญาต ห้ามแต่งคะแนน เกณฑ์ เจ้าของ หรือคำเต็ม PPRM และให้ผู้รับผิดชอบยืนยัน",
+      "sourceStatus": "official-source-required",
+      "reviewedAt": "2026-08-08",
+      "status": "Published",
+      "limitations": "กรอบทั่วไปเท่านั้น ไม่ใช่คู่มือหรือเกณฑ์ของ กฟผ.",
+      "related": [
+        "FAQ-PPRM-001",
+        "FAQ-PPRM-003"
+      ]
+    }
   ]
 }

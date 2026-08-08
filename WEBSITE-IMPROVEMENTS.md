@@ -954,14 +954,14 @@ FAQ แต่ละรายการควรมี:
 | งาน | สถานะ MVP | สิ่งที่เสร็จในรอบนี้ | สิ่งที่ยังต้องทำก่อน Done |
 |---|---|---|---|
 | WEB-001 | Review / Boundary implemented | API boundary, default-deny service status, server-side member/admin checks และ env allowlist contract | OAuth adapter, session/DB, Admin UI, audit และ provider tests |
-| WEB-002 | Review / Partial | FAQ search/filter/deep link/copy prompt และ starter set 18/180 ครบ 6 หมวด | เขียนและตรวจอีก 162 ข้อ, official sources/reviewers, admin history |
-| WEB-003 | Review / Architecture only | 4-category catalog UX, disclosure, verified-data gate และ 0 fake listings | Shopee approval/feed, real listings, link/compliance review, conversion import |
+| WEB-002 | Review / Partial | FAQ 60/180 (10 ข้อต่อหมวด), search/filter/tag/deep link/copy, related items, local-only helpful feedback และ source-status/ข้อจำกัด | เขียนและตรวจอีก 120 ข้อ, official sources/reviewers โดยเฉพาะ PPRM, admin history |
+| WEB-003 | Review / Architecture only | 4-category catalog UX, versioned schema/import policy, deterministic fail-closed validator, comparison architecture, disclosure และ 0 fake listings | Shopee approval/feed, real listings, link/compliance review, conversion import |
 | WEB-004 | Review / MVP | Privacy, cookies/consent, terms, affiliate, medical, financial และ data-request disclosure | ยืนยัน privacy contact และ legal review เมื่อ provider ถูกเลือก |
-| WEB-005 | Review / MVP | Canonical/absolute OG สำหรับ public hubs, Organization URL, generated sitemap/checks | Search Console/GA Data integrations และ full structured-data validation |
-| WEB-006 | Review / MVP | Local unified search across articles/videos/FAQs/products พร้อม type/sort | autocomplete, related-content ranking และ consented server analytics |
+| WEB-005 | Review / MVP | Canonical/absolute OG, generated WebPage/Breadcrumb และ Article JSON-LD, sitemap และ deterministic metadata checks | Search Console/GA Data integrations และ external rich-result validation |
+| WEB-006 | Review / MVP | Local unified search across articles/videos/FAQs/products พร้อม type/category filters, normalized relevance, latest/title sort, suggestions และ URL state | richer autocomplete และ consented aggregate server analytics หากเลือก provider |
 | WEB-007 | Review / MVP | Branded 404, safe load errors และ local broken-link check | uptime/client/API monitoring provider และ incident dashboard |
-| WEB-008 | Review / MVP | Manifest, icon, service worker cache, reduced motion และ build pipeline | measured Lighthouse/CWV budget, responsive image variants และ cache headers on host |
-| WEB-009 | Review / Partial | Existing sync preserved; public freshness remains visible in data | persisted attempt/success health, >12h alert, authorized retry/audit |
+| WEB-008 | Review / MVP | Manifest, icon, navigation-only offline fallback, stale-while-revalidate assets, reduced motion และ build pipeline | measured Lighthouse/CWV budget, responsive image variants และ cache headers on host |
+| WEB-009 | Review / Partial | Existing sync preserved; public timestamp/count and >12h stale warning derived from local data | persisted attempt/success health, authorized retry/audit และ duplicate/deleted checks |
 | WEB-010 | Review / Boundary only | Member unavailable state and authenticated API ownership boundary | OAuth/DB, bookmark/history/preferences, export/delete UI and tests |
 | WEB-011 | Review / Boundary only | Honest unavailable state; no email collection without provider | provider, consent record, double opt-in, unsubscribe, lead magnet delivery |
 | WEB-012 | Review / Boundary only | Honest catalog/payment unavailable state; no fake price or checkout | approved catalog, terms/refund/delivery/tax/support and payment integration |
@@ -977,3 +977,14 @@ FAQ แต่ละรายการควรมี:
 - เพิ่ม default-deny backend contract สำหรับ OAuth/Admin/Member/GA/Database/Newsletter/Affiliate/Payment
 - เพิ่ม manifest/service worker, sitemap build, syntax/site/security tests และ setup documentation
 - คง analytics consent แบบ opt-in; ไม่มี analytics script โหลดก่อนอนุญาต
+
+### Change Log — REVIEW-2-2026-08-08 (หลัง commit `1de91c3`)
+
+- ขยาย FAQ จาก 18 เป็น 60 รายการอย่างสมดุล 6 หมวด (10 รายการต่อหมวด); คงเป้าหมาย 180 และไม่อ้างว่าเสร็จครบ
+- เพิ่ม metadata สถานะแหล่งข้อมูล ข้อจำกัด วันที่ตรวจ Related FAQs ตัวกรอง tag URL filter state และ helpful feedback ที่เก็บเฉพาะในอุปกรณ์
+- คง PPRM เป็นคำย่อที่ยังไม่ยืนยัน; เนื้อหาองค์กรทั้งหมดเป็นกรอบทั่วไปและกำหนดสถานะ `official-source-required`
+- ปรับ unified search ให้ค้น prompt/tag, กรองประเภท/หมวด, เรียง relevance/latest/title และใช้คำค้นแนะนำโดยไม่ส่งคำค้นออกนอกอุปกรณ์
+- เพิ่ม product schema/import policy และ validator แบบ fail-closed; catalog ยังคง 0 รายการและไม่มีสินค้า ราคา rating รีวิว ลิงก์หรือรายได้จำลอง
+- เพิ่ม WebPage/Breadcrumb และ Article structured data ใน build, ตรวจ absolute canonical/OG และ accessibility contracts
+- แก้ service worker ให้ fallback 404 เฉพาะ navigation และเพิ่ม freshness warning จาก timestamp/count ของข้อมูล YouTube ในเครื่อง
+- เพิ่ม deterministic static-contract tests; ไม่มีการทำ Google auth/OAuth/Gmail/Admin identity, ไม่มี secret/provider integration, ไม่ Push และไม่ Deploy

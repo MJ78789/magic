@@ -1,1 +1,20 @@
-{"updatedAt":null,"items":[],"status":"awaiting-verified-source","note":"ยังไม่เผยแพร่รายการสินค้า จนกว่าจะมีข้อมูลร้านค้า ลิงก์ ราคา และการตรวจ Compliance ที่ยืนยันได้"}
+{
+  "schemaVersion": 1,
+  "updatedAt": null,
+  "status": "awaiting-verified-source",
+  "note": "ยังไม่เผยแพร่รายการสินค้า จนกว่าจะมีข้อมูลร้านค้า ลิงก์ ราคา และการตรวจ Compliance ที่ยืนยันได้",
+  "categories": [
+    {"id":"technology","label":"ไอทีและเทคโนโลยี","compliance":"standard"},
+    {"id":"ai-learning","label":"AI และการเรียนรู้","compliance":"standard"},
+    {"id":"general-health","label":"สุขภาพทั่วไปและอุปกรณ์สุขภาพ","compliance":"enhanced-review"},
+    {"id":"home","label":"ของใช้ในบ้าน","compliance":"standard"}
+  ],
+  "importPolicy": {
+    "publishableStatuses":["Published"],
+    "requiredDisclosureVersion":"affiliate-v1",
+    "prohibitedCategories":["medicine","controlled-product"],
+    "reviewMaxAgeDays":30,
+    "note":"ตัวนำเข้าต้องปฏิเสธข้อมูลที่ขาดแหล่งตรวจสอบ วันที่ตรวจ ผู้ตรวจ ข้อจำกัด หรือ compliance status"
+  },
+  "items": []
+}
