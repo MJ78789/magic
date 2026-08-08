@@ -45,32 +45,56 @@ test("public website content does not reference restricted organization names", 
     );
   }
 });
-test("catalog defaults empty and fail-closed", async () => {
+test("catalog publishes only reviewed affiliate listings", async () => {
   const data = await json("data/products.json");
-  assert.equal(data.items.length, 0);
-  assert.equal(data.status, "awaiting-verified-source");
+  assert.equal(data.items.length, 12);
+  assert.equal(data.status, "published-reviewed-batch");
+  assert.equal(
+    data.items.every(
+      (x) =>
+        x.status === "Published" &&
+        x.complianceStatus === "approved" &&
+        x.affiliateUrl.startsWith("https://s.shopee.co.th/"),
+    ),
+    true,
+  );
   assert.deepEqual(data.importPolicy.prohibitedCategories, [
     "medicine",
     "controlled-product",
   ]);
 });
-test("FAQ usage examples stay explicit and Shopee intake has seven unpublished slots", async () => {
+test("FAQ usage examples stay explicit and every FAQ has a ready prompt", async () => {
   const faqs = await json("data/faqs.json"),
-    item = faqs.items.find((x) => x.id === "FAQ-MKT-002"),
-    intake = await json("data/shopee-affiliate-intake.json");
+    item = faqs.items.find((x) => x.id === "FAQ-MKT-002");
   assert.match(item.usageExample.prompt, /Role:/);
   assert.match(item.usageExample.prompt, /Constraints:/);
   assert.match(item.usageExample.note, /ข้อมูลสาธิต/);
-  assert.equal(intake.slots.length, 7);
   assert.equal(
-    intake.slots.every(
-      (x, i) =>
-        x.position === i + 1 &&
-        x.sourceUrl === null &&
-        x.status === "awaiting-url",
+    faqs.items.every(
+      (x) =>
+        x.readyPrompt.includes("Role:") &&
+        x.readyPrompt.includes("Task:") &&
+        x.readyPrompt.includes("Context:") &&
+        x.readyPrompt.includes("Constraints:"),
     ),
     true,
   );
+});
+test("member navigation is hidden from public pages", async () => {
+  const pages = [
+    "index.html",
+    "youtube.html",
+    "content.html",
+    "faqs.html",
+    "products.html",
+    "search.html",
+    "legal.html",
+    "governance.html",
+  ];
+  for (const file of pages) {
+    const body = await readFile(new URL(`../${file}`, import.meta.url), "utf8");
+    assert.doesNotMatch(body, /href=["']services\.html["'][^>]*>สมาชิก</);
+  }
 });
 test("service worker never serves 404 HTML for failed subresources", async () => {
   const source = await readFile(new URL("../sw.js", import.meta.url), "utf8");
