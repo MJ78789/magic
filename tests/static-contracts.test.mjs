@@ -117,3 +117,17 @@ test("products show recommendations by default and public content has Facebook s
     assert.match(source, /data-track=["']facebook_share["']/);
   }
 });
+test("every published product has a crawlable share page with its own image", async () => {
+  const products = await json("data/products.json");
+  for (const item of products.items) {
+    const html = await readFile(
+      new URL(`../products/${item.slug}/index.html`, import.meta.url),
+      "utf8",
+    );
+    assert.match(html, new RegExp(`<meta property="og:title" content="${item.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"`));
+    assert.match(html, new RegExp(`<meta property="og:image" content="${item.imageUrl.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"`));
+    assert.match(html, new RegExp(`products/${item.slug}/`));
+  }
+  const productJs = await readFile(new URL("../assets/js/products.js", import.meta.url), "utf8");
+  assert.match(productJs, /products\/\$\{x\.slug\}\//);
+});

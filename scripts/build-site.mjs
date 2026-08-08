@@ -118,6 +118,7 @@ for (const dir of [
   "data",
   "content",
   "articles",
+  "products",
   "server",
   ".openai",
 ]) {
@@ -131,7 +132,12 @@ const pages = files.filter(
 const articles = JSON.parse(
   await readFile(path.join(root, "data/articles.json"), "utf8"),
 ).items.map((x) => `articles/${x.slug}/`);
-const urls = [...pages, ...articles]
+const products = JSON.parse(
+  await readFile(path.join(root, "data/products.json"), "utf8"),
+).items
+  .filter((x) => x.status === "Published" && x.complianceStatus === "approved")
+  .map((x) => `products/${x.slug}/`);
+const urls = [...pages, ...articles, ...products]
   .map(
     (p) =>
       `  <url><loc>https://magicsuccessthailand.com/${p === "index.html" ? "" : p}</loc></url>`,
@@ -141,5 +147,5 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://w
 await writeFile(path.join(root, "sitemap.xml"), sitemap);
 await writeFile(path.join(dist, "sitemap.xml"), sitemap);
 console.log(
-  `Built ${pages.length} public pages and ${articles.length} article URLs`,
+  `Built ${pages.length} public pages, ${articles.length} article URLs, and ${products.length} product URLs`,
 );

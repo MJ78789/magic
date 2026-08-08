@@ -6,8 +6,9 @@
   "scripts": {
     "build:faqs": "node scripts/expand-faqs.mjs",
     "build:articles": "node scripts/build-articles.mjs",
+    "build:products": "node scripts/build-products.mjs",
     "build:site": "node scripts/build-site.mjs",
-    "build": "npm run build:faqs && npm run build:articles && npm run build:site",
+    "build": "npm run build:faqs && npm run build:articles && npm run build:products && npm run build:site",
     "sync:youtube": "node scripts/sync-youtube.mjs",
     "check:syntax": "node --check assets/js/main.js && node --check assets/js/youtube.js && node --check assets/js/content.js && node --check assets/js/article.js && node --check assets/js/search.js && node --check assets/js/faqs.js && node --check assets/js/products.js && node --check server/index.js",
     "check:products": "node scripts/validate-products.mjs",
