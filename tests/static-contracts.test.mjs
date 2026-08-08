@@ -100,4 +100,6 @@ test("service worker never serves 404 HTML for failed subresources", async () =>
   const source = await readFile(new URL("../sw.js", import.meta.url), "utf8");
   assert.match(source, /request\.mode===\"navigate\"/);
   assert.doesNotMatch(source, /hit\|\|caches\.match\("\/404\.html"\)/);
+  assert.match(source, /freshAsset/);
+  assert.match(source, /pathname\.startsWith\("\/data\/"\)/);
 });
